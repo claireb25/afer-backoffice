@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Infraction index{% endblock %}
+
+{% block body %}
+    <h1>Infraction index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_infraction</th>
+                <th>Heure_infraction</th>
+                <th>Lieu_infraction</th>
+                <th>Numero_parquet</th>
+                <th>Conduite_sans_permis</th>
+                <th>Conduite_sans_assurance</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for infraction in infractions %}
+            <tr>
+                <td>{{ infraction.id }}</td>
+                <td>{{ infraction.dateInfraction ? infraction.dateInfraction|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ infraction.heureInfraction ? infraction.heureInfraction|date('H:i:s') : '' }}</td>
+                <td>{{ infraction.lieuInfraction }}</td>
+                <td>{{ infraction.numeroParquet }}</td>
+                <td>{{ infraction.conduiteSansPermis ? 'Yes' : 'No' }}</td>
+                <td>{{ infraction.conduiteSansAssurance ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('infraction_show', {'id': infraction.id}) }}">show</a>
+                    <a href="{{ path('infraction_edit', {'id': infraction.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('infraction_new') }}">Create new</a>
+{% endblock %}

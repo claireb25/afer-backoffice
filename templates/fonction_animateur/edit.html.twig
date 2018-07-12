@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit FonctionAnimateur{% endblock %}
+
+{% block body %}
+    <h1>Edit FonctionAnimateur</h1>
+
+    {{ include('fonction_animateur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('fonction_animateur_index') }}">back to list</a>
+
+    {{ include('fonction_animateur/_delete_form.html.twig') }}
+{% endblock %}

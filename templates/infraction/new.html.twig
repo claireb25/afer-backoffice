@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Infraction{% endblock %}
+
+{% block body %}
+    <h1>Create new Infraction</h1>
+
+    {{ include('infraction/_form.html.twig') }}
+
+    <a href="{{ path('infraction_index') }}">back to list</a>
+{% endblock %}
