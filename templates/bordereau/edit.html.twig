@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bordereau{% endblock %}
+
+{% block body %}
+    <h1>Edit Bordereau</h1>
+
+    {{ include('bordereau/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('bordereau_index') }}">back to list</a>
+
+    {{ include('bordereau/_delete_form.html.twig') }}
+{% endblock %}

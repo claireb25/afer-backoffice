@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CasStage index{% endblock %}
+
+{% block body %}
+    <h1>CasStage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cas_nom</th>
+                <th>Cas_prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cas_stage in cas_stages %}
+            <tr>
+                <td>{{ cas_stage.id }}</td>
+                <td>{{ cas_stage.casNom }}</td>
+                <td>{{ cas_stage.casPrix }}</td>
+                <td>
+                    <a href="{{ path('cas_stage_show', {'id': cas_stage.id}) }}">show</a>
+                    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cas_stage_new') }}">Create new</a>
+{% endblock %}
