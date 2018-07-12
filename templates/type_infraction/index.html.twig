@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeInfraction index{% endblock %}
+
+{% block body %}
+    <h1>TypeInfraction index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type_infraction</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_infraction in type_infractions %}
+            <tr>
+                <td>{{ type_infraction.id }}</td>
+                <td>{{ type_infraction.typeInfraction }}</td>
+                <td>
+                    <a href="{{ path('type_infraction_show', {'id': type_infraction.id}) }}">show</a>
+                    <a href="{{ path('type_infraction_edit', {'id': type_infraction.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_infraction_new') }}">Create new</a>
+{% endblock %}

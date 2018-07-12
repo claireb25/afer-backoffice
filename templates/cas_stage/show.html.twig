@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CasStage{% endblock %}
+
+{% block body %}
+    <h1>CasStage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cas_stage.id }}</td>
+            </tr>
+            <tr>
+                <th>Cas_nom</th>
+                <td>{{ cas_stage.casNom }}</td>
+            </tr>
+            <tr>
+                <th>Cas_prix</th>
+                <td>{{ cas_stage.casPrix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cas_stage_index') }}">back to list</a>
+
+    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">edit</a>
+
+    {{ include('cas_stage/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LieuStage{% endblock %}
+
+{% block body %}
+    <h1>LieuStage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lieu_stage.id }}</td>
+            </tr>
+            <tr>
+                <th>Lieu_nom</th>
+                <td>{{ lieu_stage.lieuNom }}</td>
+            </tr>
+            <tr>
+                <th>Etablissement_nom</th>
+                <td>{{ lieu_stage.etablissementNom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ lieu_stage.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Code_postal</th>
+                <td>{{ lieu_stage.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Commune</th>
+                <td>{{ lieu_stage.commune }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ lieu_stage.tel }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ lieu_stage.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ lieu_stage.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Divers</th>
+                <td>{{ lieu_stage.divers }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lieu_stage_index') }}">back to list</a>
+
+    <a href="{{ path('lieu_stage_edit', {'id': lieu_stage.id}) }}">edit</a>
+
+    {{ include('lieu_stage/_delete_form.html.twig') }}
+{% endblock %}

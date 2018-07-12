@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CasStage{% endblock %}
+
+{% block body %}
+    <h1>Edit CasStage</h1>
+
+    {{ include('cas_stage/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cas_stage_index') }}">back to list</a>
+
+    {{ include('cas_stage/_delete_form.html.twig') }}
+{% endblock %}

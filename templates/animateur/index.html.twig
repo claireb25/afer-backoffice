@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animateur index{% endblock %}
+
+{% block body %}
+    <h1>Animateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Gta</th>
+                <th>Raison_sociale</th>
+                <th>Adresse</th>
+                <th>Code_postal</th>
+                <th>Commune</th>
+                <th>Region</th>
+                <th>Tel_portable</th>
+                <th>Tel_fixe</th>
+                <th>Email</th>
+                <th>Urssaf</th>
+                <th>Siret</th>
+                <th>Km_a_r</th>
+                <th>Repas</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animateur in animateurs %}
+            <tr>
+                <td>{{ animateur.id }}</td>
+                <td>{{ animateur.nom }}</td>
+                <td>{{ animateur.prenom }}</td>
+                <td>{{ animateur.gta ? 'Yes' : 'No' }}</td>
+                <td>{{ animateur.raisonSociale }}</td>
+                <td>{{ animateur.adresse }}</td>
+                <td>{{ animateur.codePostal }}</td>
+                <td>{{ animateur.commune }}</td>
+                <td>{{ animateur.region }}</td>
+                <td>{{ animateur.telPortable }}</td>
+                <td>{{ animateur.telFixe }}</td>
+                <td>{{ animateur.email }}</td>
+                <td>{{ animateur.urssaf }}</td>
+                <td>{{ animateur.siret }}</td>
+                <td>{{ animateur.kmAR }}</td>
+                <td>{{ animateur.repas ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('animateur_show', {'id': animateur.id}) }}">show</a>
+                    <a href="{{ path('animateur_edit', {'id': animateur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('animateur_new') }}">Create new</a>
+{% endblock %}
