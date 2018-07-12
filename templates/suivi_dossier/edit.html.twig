@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SuiviDossier{% endblock %}
+
+{% block body %}
+    <h1>Edit SuiviDossier</h1>
+
+    {{ include('suivi_dossier/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('suivi_dossier_index') }}">back to list</a>
+
+    {{ include('suivi_dossier/_delete_form.html.twig') }}
+{% endblock %}

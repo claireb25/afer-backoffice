@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New StatutAnimateur{% endblock %}
+
+{% block body %}
+    <h1>Create new StatutAnimateur</h1>
+
+    {{ include('statut_animateur/_form.html.twig') }}
+
+    <a href="{{ path('statut_animateur_index') }}">back to list</a>
+{% endblock %}
