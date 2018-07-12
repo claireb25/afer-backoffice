@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeInfraction{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeInfraction</h1>
+
+    {{ include('type_infraction/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_infraction_index') }}">back to list</a>
+
+    {{ include('type_infraction/_delete_form.html.twig') }}
+{% endblock %}

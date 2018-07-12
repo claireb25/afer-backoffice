@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FonctionAnimateur{% endblock %}
+
+{% block body %}
+    <h1>FonctionAnimateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fonction_animateur.id }}</td>
+            </tr>
+            <tr>
+                <th>Fonction_nom</th>
+                <td>{{ fonction_animateur.fonctionNom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fonction_animateur_index') }}">back to list</a>
+
+    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">edit</a>
+
+    {{ include('fonction_animateur/_delete_form.html.twig') }}
+{% endblock %}

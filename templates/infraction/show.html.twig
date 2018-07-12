@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Infraction{% endblock %}
+
+{% block body %}
+    <h1>Infraction</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ infraction.id }}</td>
+            </tr>
+            <tr>
+                <th>Date_infraction</th>
+                <td>{{ infraction.dateInfraction ? infraction.dateInfraction|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heure_infraction</th>
+                <td>{{ infraction.heureInfraction ? infraction.heureInfraction|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lieu_infraction</th>
+                <td>{{ infraction.lieuInfraction }}</td>
+            </tr>
+            <tr>
+                <th>Numero_parquet</th>
+                <td>{{ infraction.numeroParquet }}</td>
+            </tr>
+            <tr>
+                <th>Conduite_sans_permis</th>
+                <td>{{ infraction.conduiteSansPermis ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Conduite_sans_assurance</th>
+                <td>{{ infraction.conduiteSansAssurance ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('infraction_index') }}">back to list</a>
+
+    <a href="{{ path('infraction_edit', {'id': infraction.id}) }}">edit</a>
+
+    {{ include('infraction/_delete_form.html.twig') }}
+{% endblock %}

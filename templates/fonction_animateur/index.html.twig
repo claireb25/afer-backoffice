@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FonctionAnimateur index{% endblock %}
+
+{% block body %}
+    <h1>FonctionAnimateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fonction_nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fonction_animateur in fonction_animateurs %}
+            <tr>
+                <td>{{ fonction_animateur.id }}</td>
+                <td>{{ fonction_animateur.fonctionNom }}</td>
+                <td>
+                    <a href="{{ path('fonction_animateur_show', {'id': fonction_animateur.id}) }}">show</a>
+                    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('fonction_animateur_new') }}">Create new</a>
+{% endblock %}
