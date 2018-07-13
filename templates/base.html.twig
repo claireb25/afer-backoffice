@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
+         {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
+       
+ 
     </head>
     <body>
          {% block sidenav %}
@@ -17,6 +19,6 @@
         {{ knp_menu_render('sidebar') }}
         </nav>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}<script src="{{ asset('build/js/app.js') }}"></script>{% endblock %}
     </body>
 </html>
