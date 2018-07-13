@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Tribunal{% endblock %}
+{% block title %}Modifier{% endblock %}
 
 {% block body %}
-    <h1>Edit Tribunal</h1>
+    <h1>Modifier</h1>
+        <tr>
+            <td> {{ include('tribunal/_form.html.twig', {'button_label': 'Modifier'}) }}</td>
+            <td>{{ include('tribunal/_delete_form.html.twig') }}</td>
+        </tr>
 
-    {{ include('tribunal/_form.html.twig', {'button_label': 'Update'}) }}
+    <a href="{{ path('tribunal_index') }}">retour</a>
 
-    <a href="{{ path('tribunal_index') }}">back to list</a>
-
-    {{ include('tribunal/_delete_form.html.twig') }}
+  
 {% endblock %}
