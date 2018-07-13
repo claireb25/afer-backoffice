@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="{{ app.request.basepath }}/build/app.css">{% endblock %}
+        
     </head>
     <body>
          {% block sidenav %}
         <nav class="sidenav">
-        {{ knp_menu_render('sidebar') }}
+        {{ knp_menu_render('sidebar') }
         </nav>
         
         {% endblock %}
