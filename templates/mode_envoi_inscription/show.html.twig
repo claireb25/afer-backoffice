@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ModeEnvoiInscription{% endblock %}
+
+{% block body %}
+    <h1>ModeEnvoiInscription</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mode_envoi_inscription.id }}</td>
+            </tr>
+            <tr>
+                <th>Courrier</th>
+                <td>{{ mode_envoi_inscription.courrier ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ mode_envoi_inscription.email ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('mode_envoi_inscription_index') }}">back to list</a>
+
+    <a href="{{ path('mode_envoi_inscription_edit', {'id': mode_envoi_inscription.id}) }}">edit</a>
+
+    {{ include('mode_envoi_inscription/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Permis{% endblock %}
+
+{% block body %}
+    <h1>Permis</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ permi.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero_permis</th>
+                <td>{{ permi.numeroPermis }}</td>
+            </tr>
+            <tr>
+                <th>Delivre_le</th>
+                <td>{{ permi.delivreLe ? permi.delivreLe|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('permis_index') }}">back to list</a>
+
+    <a href="{{ path('permis_edit', {'id': permi.id}) }}">edit</a>
+
+    {{ include('permis/_delete_form.html.twig') }}
+{% endblock %}

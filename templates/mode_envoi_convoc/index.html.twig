@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ModeEnvoiConvoc index{% endblock %}
+
+{% block body %}
+    <h1>ModeEnvoiConvoc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Courrier</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mode_envoi_convoc in mode_envoi_convocs %}
+            <tr>
+                <td>{{ mode_envoi_convoc.id }}</td>
+                <td>{{ mode_envoi_convoc.courrier ? 'Yes' : 'No' }}</td>
+                <td>{{ mode_envoi_convoc.email ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('mode_envoi_convoc_show', {'id': mode_envoi_convoc.id}) }}">show</a>
+                    <a href="{{ path('mode_envoi_convoc_edit', {'id': mode_envoi_convoc.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mode_envoi_convoc_new') }}">Create new</a>
+{% endblock %}
