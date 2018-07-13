@@ -9,7 +9,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Prefecture_nom</th>
                 <th>Adresse</th>
                 <th>Code_postal</th>
@@ -20,14 +19,14 @@
         <tbody>
         {% for prefecture in prefectures %}
             <tr>
-                <td>{{ prefecture.id }}</td>
                 <td>{{ prefecture.prefectureNom }}</td>
                 <td>{{ prefecture.adresse }}</td>
                 <td>{{ prefecture.codePostal }}</td>
                 <td>{{ prefecture.commune }}</td>
                 <td>
-                    <a href="{{ path('prefecture_show', {'id': prefecture.id}) }}">show</a>
-                    <a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">edit</a>
+                    <a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">éditer</a>
+                    {{ include('prefecture/_delete_form.html.twig') }}
+                    
                 </td>
             </tr>
         {% else %}
