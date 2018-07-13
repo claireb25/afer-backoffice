@@ -9,7 +9,7 @@ html{
         }
         nav{
             background-color: $mainblack;
-            width:248px;
+            width:200px;
             height:100%;
             position:fixed;
             margin-top:250px;
@@ -34,9 +34,9 @@ html{
             .onglet{
                 line-height: 40px;
                 a{
-                    padding: 0 0 0 50px;
+                    padding: 0 0 0 40px;
                     align-content: center;
-                    
+                    font-size: 13px;
                 }
             }
             a{
