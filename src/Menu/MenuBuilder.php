@@ -38,6 +38,7 @@ class MenuBuilder
         $menu->addChild('Types d\'infractions', ['route' => 'type_infraction_index'])->setAttribute('class','onglet');
         $menu->addChild('Civilités', ['route' => 'civilite_index'])->setAttribute('class','onglet');
         $menu->addChild('Autorités', ['route' => 'autorite_index'])->setAttribute('class','onglet');
+        $menu->addChild('Permis', ['route' => 'permis_index'])->setAttribute('class','onglet');
         return $menu;
     }
 }
