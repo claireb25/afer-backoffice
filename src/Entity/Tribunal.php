@@ -43,6 +43,21 @@ class Tribunal
      */
     private $bordereaus;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Autorite", inversedBy="tribunals")
+     */
+    private $autorite_id;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $tribunal_nature;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $tribunal_service;
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();
@@ -128,6 +143,42 @@ class Tribunal
                 $bordereau->setTribunalId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAutoriteId(): ?Autorite
+    {
+        return $this->autorite_id;
+    }
+
+    public function setAutoriteId(?Autorite $autorite_id): self
+    {
+        $this->autorite_id = $autorite_id;
+
+        return $this;
+    }
+
+    public function getTribunalNature(): ?string
+    {
+        return $this->tribunal_nature;
+    }
+
+    public function setTribunalNature(?string $tribunal_nature): self
+    {
+        $this->tribunal_nature = $tribunal_nature;
+
+        return $this;
+    }
+
+    public function getTribunalService(): ?string
+    {
+        return $this->tribunal_service;
+    }
+
+    public function setTribunalService(?string $tribunal_service): self
+    {
+        $this->tribunal_service = $tribunal_service;
 
         return $this;
     }

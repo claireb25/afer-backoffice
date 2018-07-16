@@ -48,6 +48,21 @@ class Prefecture
      */
     private $permis;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Autorite", inversedBy="prefectures")
+     */
+    private $autorite_id;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $prefecture_nature;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $prefecture_service;
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();
@@ -165,6 +180,42 @@ class Prefecture
                 $permi->setPrefectureId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAutoriteId(): ?Autorite
+    {
+        return $this->autorite_id;
+    }
+
+    public function setAutoriteId(?Autorite $autorite_id): self
+    {
+        $this->autorite_id = $autorite_id;
+
+        return $this;
+    }
+
+    public function getPrefectureNature(): ?string
+    {
+        return $this->prefecture_nature;
+    }
+
+    public function setPrefectureNature(?string $prefecture_nature): self
+    {
+        $this->prefecture_nature = $prefecture_nature;
+
+        return $this;
+    }
+
+    public function getPrefectureService(): ?string
+    {
+        return $this->prefecture_service;
+    }
+
+    public function setPrefectureService(?string $prefecture_service): self
+    {
+        $this->prefecture_service = $prefecture_service;
 
         return $this;
     }
