@@ -20,8 +20,7 @@ class StagiaireType extends AbstractType
             ->add('date_naissance')
             ->add('lieu_naissance', TextType::class, array(
                 'label'=> 'Lieu de naissance',
-            )
-            
+            ) 
             )
             ->add('adresse')
             ->add('code_postal')
