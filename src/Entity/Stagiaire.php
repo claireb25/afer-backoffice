@@ -104,7 +104,15 @@ class Stagiaire
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\LiaisonStagiaireStageDossierCasBordereau", inversedBy="stagiaire_id")
      */
+
     private $liaisonStagiaireStageDossierCasBordereau;
+
+    // public function __toString() {
+
+    //     return $this->cvilite_id;
+    // }
+
+
 
     public function getId()
     {

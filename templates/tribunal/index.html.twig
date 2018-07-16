@@ -3,39 +3,41 @@
 {% block title %}Tribunal index{% endblock %}
 
 {% block body %}
-    <h1>Tribunal index</h1>
 
+    <h1>Tribunaux</h1>
+tetetete
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Tribunal_nom</th>
+                <th>Tribunal nom</th>
                 <th>Adresse</th>
-                <th>Code_postal</th>
+                <th>Code postal</th>
                 <th>Commune</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
+        <p>
+            <a href="{{ path('tribunal_new') }}">Nouveau tribunal</a>
+        </p>
         {% for tribunal in tribunals %}
             <tr>
-                <td>{{ tribunal.id }}</td>
                 <td>{{ tribunal.tribunalNom }}</td>
                 <td>{{ tribunal.adresse }}</td>
                 <td>{{ tribunal.codePostal }}</td>
                 <td>{{ tribunal.commune }}</td>
                 <td>
-                    <a href="{{ path('tribunal_show', {'id': tribunal.id}) }}">show</a>
-                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}">edit</a>
+                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}">modifier</a>
+                </td>
+                <td>
+                {{ include('tribunal/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun tribinual trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('tribunal_new') }}">Create new</a>
+  
 {% endblock %}

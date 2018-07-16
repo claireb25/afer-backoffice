@@ -5,30 +5,25 @@
 {% block body %}
     <h1>Prefecture index</h1>
   
-
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Prefecture_nom</th>
+                <th>Nom de la prefecture</th>
                 <th>Adresse</th>
-                <th>Code_postal</th>
+                <th>Code postal</th>
                 <th>Commune</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
+        <p><a href="{{ path('prefecture_new') }}">Créer une nouvelle préfecture</a></p>
         {% for prefecture in prefectures %}
             <tr>
-                <td>{{ prefecture.id }}</td>
                 <td>{{ prefecture.prefectureNom }}</td>
                 <td>{{ prefecture.adresse }}</td>
                 <td>{{ prefecture.codePostal }}</td>
                 <td>{{ prefecture.commune }}</td>
-                <td>
-                    <a href="{{ path('prefecture_show', {'id': prefecture.id}) }}">show</a>
-                    <a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">edit</a>
-                </td>
+                <td><a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">éditer</a></td>
+                <td>{{ include('prefecture/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
@@ -38,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('prefecture_new') }}">Create new</a>
+
 {% endblock %}

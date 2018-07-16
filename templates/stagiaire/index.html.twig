@@ -3,7 +3,7 @@
 {% block title %}Stagiaire index{% endblock %}
 
 {% block body %}
-    <h1>Stagiaire index</h1>
+    <h1>Stagiaires</h1>
 
     <table class="table">
         <thead>
@@ -47,8 +47,10 @@
                 <td>{{ stagiaire.partenaires ? 'Yes' : 'No' }}</td>
                 <td>{{ stagiaire.adherents ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('stagiaire_show', {'id': stagiaire.id}) }}">show</a>
+                   
                     <a href="{{ path('stagiaire_edit', {'id': stagiaire.id}) }}">edit</a>
+                      {{ include('stagiaire/_delete_form.html.twig') }}
+                    
                 </td>
             </tr>
         {% else %}
