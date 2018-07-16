@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AutoritePrefecture{% endblock %}
+
+{% block body %}
+    <h1>Create new AutoritePrefecture</h1>
+
+    {{ include('autorite_prefecture/_form.html.twig') }}
+
+    <a href="{{ path('autorite_prefecture_index') }}">back to list</a>
+{% endblock %}

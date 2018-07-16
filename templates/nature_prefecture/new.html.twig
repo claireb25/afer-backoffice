@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New NaturePrefecture{% endblock %}
+
+{% block body %}
+    <h1>Create new NaturePrefecture</h1>
+
+    {{ include('nature_prefecture/_form.html.twig') }}
+
+    <a href="{{ path('nature_prefecture_index') }}">back to list</a>
+{% endblock %}

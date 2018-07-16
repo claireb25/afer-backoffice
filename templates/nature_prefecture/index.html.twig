@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NaturePrefecture index{% endblock %}
+
+{% block body %}
+    <h1>NaturePrefecture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nature_nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nature_prefecture in nature_prefectures %}
+            <tr>
+                <td>{{ nature_prefecture.id }}</td>
+                <td>{{ nature_prefecture.natureNom }}</td>
+                <td>
+                    <a href="{{ path('nature_prefecture_show', {'id': nature_prefecture.id}) }}">show</a>
+                    <a href="{{ path('nature_prefecture_edit', {'id': nature_prefecture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('nature_prefecture_new') }}">Create new</a>
+{% endblock %}

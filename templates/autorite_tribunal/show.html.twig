@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AutoriteTribunal{% endblock %}
+
+{% block body %}
+    <h1>AutoriteTribunal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ autorite_tribunal.id }}</td>
+            </tr>
+            <tr>
+                <th>Autorite_nom</th>
+                <td>{{ autorite_tribunal.autoriteNom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('autorite_tribunal_index') }}">back to list</a>
+
+    <a href="{{ path('autorite_tribunal_edit', {'id': autorite_tribunal.id}) }}">edit</a>
+
+    {{ include('autorite_tribunal/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New NatureTribunal{% endblock %}
+
+{% block body %}
+    <h1>Create new NatureTribunal</h1>
+
+    {{ include('nature_tribunal/_form.html.twig') }}
+
+    <a href="{{ path('nature_tribunal_index') }}">back to list</a>
+{% endblock %}

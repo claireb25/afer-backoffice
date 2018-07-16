@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AutoriteTribunal{% endblock %}
+
+{% block body %}
+    <h1>Create new AutoriteTribunal</h1>
+
+    {{ include('autorite_tribunal/_form.html.twig') }}
+
+    <a href="{{ path('autorite_tribunal_index') }}">back to list</a>
+{% endblock %}
