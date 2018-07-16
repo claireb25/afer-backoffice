@@ -32,8 +32,8 @@ class StagiaireType extends AbstractType
             ->add('carte_avantages_jeunes')
             ->add('partenaires')
             ->add('adherents')
-            ->add('permis')
-            ->add('liaisonStagiaireStageDossierCasBordereau')
+            // ->add('permis')
+            // ->add('liaisonStagiaireStageDossierCasBordereau')
         ;
     }
 
