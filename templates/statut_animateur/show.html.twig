@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}StatutAnimateur{% endblock %}
+{% block title %}Statut Animateur{% endblock %}
 
 {% block body %}
-    <h1>StatutAnimateur</h1>
+    <h1>Statut Animateur</h1>
 
     <table class="table">
         <tbody>
@@ -18,9 +18,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('statut_animateur_index') }}">back to list</a>
+    <a href="{{ path('statut_animateur_index') }}">Retour</a>
 
-    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">edit</a>
+    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">Modifier</a>
 
     {{ include('statut_animateur/_delete_form.html.twig') }}
 {% endblock %}

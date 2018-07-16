@@ -19,17 +19,17 @@
                 <td>{{ statut_animateur.id }}</td>
                 <td>{{ statut_animateur.statusNom }}</td>
                 <td>
-                    <a href="{{ path('statut_animateur_show', {'id': statut_animateur.id}) }}">show</a>
-                    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">edit</a>
+                    <a href="{{ path('statut_animateur_show', {'id': statut_animateur.id}) }}">Voir</a>
+                    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun statut animateur enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('statut_animateur_new') }}">Create new</a>
+    <a href="{{ path('statut_animateur_new') }}">Nouveau</a>
 {% endblock %}
