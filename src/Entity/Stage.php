@@ -48,6 +48,10 @@ class Stage
      */
     private $animateurs;
 
+    public function __toString() {
+        return $this->stage_numero;
+    }
+
     public function __construct()
     {
         $this->liaisonStagiaireStageDossierCasBordereaus = new ArrayCollection();

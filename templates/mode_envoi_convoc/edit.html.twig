@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit ModeEnvoiConvoc{% endblock %}
+{% block title %}Modification mode d'envoi convocation{% endblock %}
 
 {% block body %}
-    <h1>Edit ModeEnvoiConvoc</h1>
+    <h1>Modification mode d'envoi convocation</h1>
 
     {{ include('mode_envoi_convoc/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('mode_envoi_convoc_index') }}">back to list</a>
+    <a href="{{ path('mode_envoi_convoc_index') }}">Retour</a>
 
     {{ include('mode_envoi_convoc/_delete_form.html.twig') }}
 {% endblock %}

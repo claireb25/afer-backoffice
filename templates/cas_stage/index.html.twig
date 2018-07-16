@@ -21,17 +21,17 @@
                 <td>{{ cas_stage.casNom }}</td>
                 <td>{{ cas_stage.casPrix }}</td>
                 <td>
-                    <a href="{{ path('cas_stage_show', {'id': cas_stage.id}) }}">show</a>
-                    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">edit</a>
+                    <a href="{{ path('cas_stage_show', {'id': cas_stage.id}) }}">Voir</a>
+                    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun cas enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('cas_stage_new') }}">Create new</a>
+    <a href="{{ path('cas_stage_new') }}">Nouveau</a>
 {% endblock %}

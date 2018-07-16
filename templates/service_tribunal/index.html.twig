@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ServiceTribunal index{% endblock %}
+
+{% block body %}
+    <h1>ServiceTribunal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Service_nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service_tribunal in service_tribunals %}
+            <tr>
+                <td>{{ service_tribunal.id }}</td>
+                <td>{{ service_tribunal.serviceNom }}</td>
+                <td>
+                    <a href="{{ path('service_tribunal_show', {'id': service_tribunal.id}) }}">show</a>
+                    <a href="{{ path('service_tribunal_edit', {'id': service_tribunal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('service_tribunal_new') }}">Create new</a>
+{% endblock %}

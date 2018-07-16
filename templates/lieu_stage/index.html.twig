@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}LieuStage index{% endblock %}
+{% block title %}Lieu du Stage index{% endblock %}
 
 {% block body %}
-    <h1>LieuStage index</h1>
+    <h1>Lieu du Stage index</h1>
 
     <table class="table">
         <thead>
@@ -35,17 +35,17 @@
                 <td>{{ lieu_stage.longitude }}</td>
                 <td>{{ lieu_stage.divers }}</td>
                 <td>
-                    <a href="{{ path('lieu_stage_show', {'id': lieu_stage.id}) }}">show</a>
-                    <a href="{{ path('lieu_stage_edit', {'id': lieu_stage.id}) }}">edit</a>
+                    <a href="{{ path('lieu_stage_show', {'id': lieu_stage.id}) }}">Voir</a>
+                    <a href="{{ path('lieu_stage_edit', {'id': lieu_stage.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Aucun enregistrement de lieu de stage</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('lieu_stage_new') }}">Create new</a>
+    <a href="{{ path('lieu_stage_new') }}">Nouveau</a>
 {% endblock %}

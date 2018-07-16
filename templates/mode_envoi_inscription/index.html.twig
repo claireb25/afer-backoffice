@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ModeEnvoiInscription index{% endblock %}
+{% block title %}Mode d'envoi inscription index{% endblock %}
 
 {% block body %}
-    <h1>ModeEnvoiInscription index</h1>
+    <h1>Mode d'envoi inscription index</h1>
 
     <table class="table">
         <thead>
@@ -21,17 +21,17 @@
                 <td>{{ mode_envoi_inscription.courrier ? 'Yes' : 'No' }}</td>
                 <td>{{ mode_envoi_inscription.email ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('mode_envoi_inscription_show', {'id': mode_envoi_inscription.id}) }}">show</a>
-                    <a href="{{ path('mode_envoi_inscription_edit', {'id': mode_envoi_inscription.id}) }}">edit</a>
+                    <a href="{{ path('mode_envoi_inscription_show', {'id': mode_envoi_inscription.id}) }}">Voir</a>
+                    <a href="{{ path('mode_envoi_inscription_edit', {'id': mode_envoi_inscription.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun mode d'envoi d'inscription enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('mode_envoi_inscription_new') }}">Create new</a>
+    <a href="{{ path('mode_envoi_inscription_new') }}">Nouveau</a>
 {% endblock %}

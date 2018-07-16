@@ -48,6 +48,21 @@ class Prefecture
      */
     private $permis;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\NaturePrefecture", inversedBy="prefectures")
+     */
+    private $prefecture_nature_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\AutoritePrefecture", inversedBy="prefectures")
+     */
+    private $autorite_prefecture_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\ServicePrefecture", inversedBy="prefectures")
+     */
+    private $service_prefecture_id;
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();
@@ -165,6 +180,42 @@ class Prefecture
                 $permi->setPrefectureId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrefectureNatureId(): ?NaturePrefecture
+    {
+        return $this->prefecture_nature_id;
+    }
+
+    public function setPrefectureNatureId(?NaturePrefecture $prefecture_nature_id): self
+    {
+        $this->prefecture_nature_id = $prefecture_nature_id;
+
+        return $this;
+    }
+
+    public function getAutoritePrefectureId(): ?AutoritePrefecture
+    {
+        return $this->autorite_prefecture_id;
+    }
+
+    public function setAutoritePrefectureId(?AutoritePrefecture $autorite_prefecture_id): self
+    {
+        $this->autorite_prefecture_id = $autorite_prefecture_id;
+
+        return $this;
+    }
+
+    public function getServicePrefectureId(): ?ServicePrefecture
+    {
+        return $this->service_prefecture_id;
+    }
+
+    public function setServicePrefectureId(?ServicePrefecture $service_prefecture_id): self
+    {
+        $this->service_prefecture_id = $service_prefecture_id;
 
         return $this;
     }

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FonctionAnimateur index{% endblock %}
+{% block title %}Fonction Animateur index{% endblock %}
 
 {% block body %}
-    <h1>FonctionAnimateur index</h1>
+    <h1>Fonction Animateur index</h1>
 
     <table class="table">
         <thead>
@@ -19,17 +19,17 @@
                 <td>{{ fonction_animateur.id }}</td>
                 <td>{{ fonction_animateur.fonctionNom }}</td>
                 <td>
-                    <a href="{{ path('fonction_animateur_show', {'id': fonction_animateur.id}) }}">show</a>
-                    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">edit</a>
+                    <a href="{{ path('fonction_animateur_show', {'id': fonction_animateur.id}) }}">Voir</a>
+                    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune fonction animateur enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('fonction_animateur_new') }}">Create new</a>
+    <a href="{{ path('fonction_animateur_new') }}">Nouveau</a>
 {% endblock %}

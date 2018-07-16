@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TypeInfraction index{% endblock %}
+{% block title %}Type d'infraction index{% endblock %}
 
 {% block body %}
-    <h1>TypeInfraction index</h1>
+    <h1>Type d'infraction index</h1>
 
     <table class="table">
         <thead>
@@ -19,17 +19,17 @@
                 <td>{{ type_infraction.id }}</td>
                 <td>{{ type_infraction.typeInfraction }}</td>
                 <td>
-                    <a href="{{ path('type_infraction_show', {'id': type_infraction.id}) }}">show</a>
-                    <a href="{{ path('type_infraction_edit', {'id': type_infraction.id}) }}">edit</a>
+                    <a href="{{ path('type_infraction_show', {'id': type_infraction.id}) }}">Voir</a>
+                    <a href="{{ path('type_infraction_edit', {'id': type_infraction.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun enregistrement de type d'infraction</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('type_infraction_new') }}">Create new</a>
+    <a href="{{ path('type_infraction_new') }}">Nouveau</a>
 {% endblock %}

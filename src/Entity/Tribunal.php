@@ -43,6 +43,21 @@ class Tribunal
      */
     private $bordereaus;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\NatureTribunal", inversedBy="tribunals")
+     */
+    private $nature_tribunal_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\AutoriteTribunal", inversedBy="tribunals")
+     */
+    private $autorite_tribunal_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\ServiceTribunal", inversedBy="tribunals")
+     */
+    private $service_tribunal_id;
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();
@@ -128,6 +143,42 @@ class Tribunal
                 $bordereau->setTribunalId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNatureTribunalId(): ?NatureTribunal
+    {
+        return $this->nature_tribunal_id;
+    }
+
+    public function setNatureTribunalId(?NatureTribunal $tribunal_nature): self
+    {
+        $this->nature_tribunal_id = $nature_tribunal_id;
+
+        return $this;
+    }
+
+    public function getAutoriteTribunalId(): ?AutoriteTribunal
+    {
+        return $this->autorite_tribunal_id;
+    }
+
+    public function setAutoriteTribunalId(?AutoriteTribunal $autorite_tribunal_id): self
+    {
+        $this->autorite_tribunal_id = $autorite_tribunal_id;
+
+        return $this;
+    }
+
+    public function getServiceTribunalId(): ?ServiceTribunal
+    {
+        return $this->service_tribunal_id;
+    }
+
+    public function setServiceTribunalId(?ServiceTribunal $service_tribunal_id): self
+    {
+        $this->service_tribunal_id = $service_tribunal_id;
 
         return $this;
     }

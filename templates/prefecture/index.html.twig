@@ -22,12 +22,12 @@
                 <td>{{ prefecture.adresse }}</td>
                 <td>{{ prefecture.codePostal }}</td>
                 <td>{{ prefecture.commune }}</td>
-                <td><a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">éditer</a></td>
+                <td><a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">Modifierr</a></td>
                 <td>{{ include('prefecture/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucune préfecture enregistré</td>
             </tr>
         {% endfor %}
         </tbody>

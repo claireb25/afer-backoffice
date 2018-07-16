@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ServicePrefecture{% endblock %}
+
+{% block body %}
+    <h1>Create new ServicePrefecture</h1>
+
+    {{ include('service_prefecture/_form.html.twig') }}
+
+    <a href="{{ path('service_prefecture_index') }}">back to list</a>
+{% endblock %}

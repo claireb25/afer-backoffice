@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ModeEnvoiInscription{% endblock %}
+{% block title %}Mode d'envoi inscription{% endblock %}
 
 {% block body %}
-    <h1>ModeEnvoiInscription</h1>
+    <h1>Mode d'envoi inscription</h1>
 
     <table class="table">
         <tbody>
@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('mode_envoi_inscription_index') }}">back to list</a>
+    <a href="{{ path('mode_envoi_inscription_index') }}">Retour</a>
 
-    <a href="{{ path('mode_envoi_inscription_edit', {'id': mode_envoi_inscription.id}) }}">edit</a>
+    <a href="{{ path('mode_envoi_inscription_edit', {'id': mode_envoi_inscription.id}) }}">Modifier</a>
 
     {{ include('mode_envoi_inscription/_delete_form.html.twig') }}
 {% endblock %}

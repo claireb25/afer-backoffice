@@ -28,6 +28,10 @@ class FonctionAnimateur
      */
     private $animateurs;
 
+    public function __toString() {
+        return $this->fonction_nom;
+    }
+
     public function __construct()
     {
         $this->animateurs = new ArrayCollection();

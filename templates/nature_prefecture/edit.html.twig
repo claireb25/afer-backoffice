@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit NaturePrefecture{% endblock %}
+
+{% block body %}
+    <h1>Edit NaturePrefecture</h1>
+
+    {{ include('nature_prefecture/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('nature_prefecture_index') }}">back to list</a>
+
+    {{ include('nature_prefecture/_delete_form.html.twig') }}
+{% endblock %}

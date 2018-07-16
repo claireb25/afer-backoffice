@@ -5,7 +5,7 @@
 {% block body %}
 
     <h1>Tribunaux</h1>
-
+tetetete
     <table class="table">
         <thead>
             <tr>
@@ -13,10 +13,12 @@
                 <th>Adresse</th>
                 <th>Code postal</th>
                 <th>Commune</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
+        <p>
+            <a href="{{ path('tribunal_new') }}">Nouveau tribunal</a>
+        </p>
         {% for tribunal in tribunals %}
             <tr>
                 <td>{{ tribunal.tribunalNom }}</td>
@@ -25,16 +27,17 @@
                 <td>{{ tribunal.commune }}</td>
                 <td>
                     <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}">modifier</a>
-                    {{ include('tribunal/_delete_form.html.twig') }}
+                </td>
+                <td>
+                {{ include('tribunal/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">Aucun tribinual trouvé</td>
+                <td colspan="6">Aucun tribinual enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('tribunal_new') }}">nouveau</a>
+  
 {% endblock %}

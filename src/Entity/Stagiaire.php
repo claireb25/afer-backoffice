@@ -37,7 +37,7 @@ class Stagiaire
     private $prenom;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date_naissance;
 
@@ -104,7 +104,15 @@ class Stagiaire
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\LiaisonStagiaireStageDossierCasBordereau", inversedBy="stagiaire_id")
      */
+
     private $liaisonStagiaireStageDossierCasBordereau;
+
+    // public function __toString() {
+
+    //     return $this->cvilite_id;
+    // }
+
+
 
     public function getId()
     {

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ForfaitAnimateur{% endblock %}
+{% block title %}Forfait Animateur{% endblock %}
 
 {% block body %}
-    <h1>ForfaitAnimateur</h1>
+    <h1>Forfait Animateur</h1>
 
     <table class="table">
         <tbody>
@@ -18,9 +18,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('forfait_animateur_index') }}">back to list</a>
+    <a href="{{ path('forfait_animateur_index') }}">Retour</a>
 
-    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}">edit</a>
+    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}">Modifier</a>
 
     {{ include('forfait_animateur/_delete_form.html.twig') }}
 {% endblock %}

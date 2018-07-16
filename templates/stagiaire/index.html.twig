@@ -3,7 +3,7 @@
 {% block title %}Stagiaire index{% endblock %}
 
 {% block body %}
-    <h1>Stagiaire index</h1>
+    <h1>Stagiaires</h1>
 
     <table class="table">
         <thead>
@@ -47,17 +47,19 @@
                 <td>{{ stagiaire.partenaires ? 'Yes' : 'No' }}</td>
                 <td>{{ stagiaire.adherents ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('stagiaire_show', {'id': stagiaire.id}) }}">show</a>
-                    <a href="{{ path('stagiaire_edit', {'id': stagiaire.id}) }}">edit</a>
+                   
+                    <a href="{{ path('stagiaire_edit', {'id': stagiaire.id}) }}">Modifier</a>
+                      {{ include('stagiaire/_delete_form.html.twig') }}
+                    
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="17">no records found</td>
+                <td colspan="17">Aucun stagiaire enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('stagiaire_new') }}">Create new</a>
+    <a href="{{ path('stagiaire_new') }}">Nouveau</a>
 {% endblock %}

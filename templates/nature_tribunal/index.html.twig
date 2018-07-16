@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NatureTribunal index{% endblock %}
+
+{% block body %}
+    <h1>NatureTribunal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nature_nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nature_tribunal in nature_tribunals %}
+            <tr>
+                <td>{{ nature_tribunal.id }}</td>
+                <td>{{ nature_tribunal.natureNom }}</td>
+                <td>
+                    <a href="{{ path('nature_tribunal_show', {'id': nature_tribunal.id}) }}">show</a>
+                    <a href="{{ path('nature_tribunal_edit', {'id': nature_tribunal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('nature_tribunal_new') }}">Create new</a>
+{% endblock %}
