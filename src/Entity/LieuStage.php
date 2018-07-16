@@ -68,6 +68,10 @@ class LieuStage
      */
     private $stages;
 
+    public function __toString() {
+        return $this->lieu_nom;
+    }
+
     public function __construct()
     {
         $this->stages = new ArrayCollection();
