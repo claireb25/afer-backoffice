@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ForfaitAnimateur index{% endblock %}
+{% block title %}Forfait Animateur index{% endblock %}
 
 {% block body %}
-    <h1>ForfaitAnimateur index</h1>
+    <h1>Forfait Animateur index</h1>
 
     <table class="table">
         <thead>
@@ -19,17 +19,17 @@
                 <td>{{ forfait_animateur.id }}</td>
                 <td>{{ forfait_animateur.forfaitPrix }}</td>
                 <td>
-                    <a href="{{ path('forfait_animateur_show', {'id': forfait_animateur.id}) }}">show</a>
-                    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}">edit</a>
+                    <a href="{{ path('forfait_animateur_show', {'id': forfait_animateur.id}) }}">Voir</a>
+                    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun forfait enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('forfait_animateur_new') }}">Create new</a>
+    <a href="{{ path('forfait_animateur_new') }}">Nouveau</a>
 {% endblock %}

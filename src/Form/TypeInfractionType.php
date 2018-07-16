@@ -13,7 +13,7 @@ class TypeInfractionType extends AbstractType
     {
         $builder
             ->add('type_infraction')
-            ->add('date_infraction')
+            //->add('date_infraction')
         ;
     }
 

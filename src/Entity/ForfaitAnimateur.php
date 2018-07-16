@@ -28,7 +28,14 @@ class ForfaitAnimateur
      */
     private $animateurs;
 
+<<<<<<< HEAD
  
+=======
+    public function __toString() {
+        return (string) $this->forfait_prix;
+    }
+
+>>>>>>> 5be98c607105fe22b5ae2f78767d4077a46fb962
     public function __construct()
     {
         $this->animateurs = new ArrayCollection();

@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit ModeEnvoiInscription{% endblock %}
+{% block title %}Modification mode d'envoi inscription{% endblock %}
 
 {% block body %}
-    <h1>Edit ModeEnvoiInscription</h1>
+    <h1>Modification mode d'envoi inscription</h1>
 
     {{ include('mode_envoi_inscription/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('mode_envoi_inscription_index') }}">retour</a>
+    <a href="{{ path('mode_envoi_inscription_index') }}">Retour</a>
 
     {{ include('mode_envoi_inscription/_delete_form.html.twig') }}
 {% endblock %}

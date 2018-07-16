@@ -17,17 +17,17 @@
             <tr>
                 <td>{{ bordereau.id }}</td>
                 <td>
-                    <a href="{{ path('bordereau_show', {'id': bordereau.id}) }}">show</a>
-                    <a href="{{ path('bordereau_edit', {'id': bordereau.id}) }}">edit</a>
+                    <a href="{{ path('bordereau_show', {'id': bordereau.id}) }}">Voir</a>
+                    <a href="{{ path('bordereau_edit', {'id': bordereau.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="2">no records found</td>
+                <td colspan="2">Aucune donnée enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('bordereau_new') }}">Create new</a>
+    <a href="{{ path('bordereau_new') }}">Nouveau</a>
 {% endblock %}

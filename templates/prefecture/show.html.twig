@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Prefecture{% endblock %}
+{% block title %}Préfecture{% endblock %}
 
 {% block body %}
-    <h1>Prefecture</h1>
+    <h1>Préfecture</h1>
 
     <table class="table">
         <tbody>
@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('prefecture_index') }}">back to list</a>
+    <a href="{{ path('prefecture_index') }}">Retour</a>
 
-    <a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">edit</a>
+    <a href="{{ path('prefecture_edit', {'id': prefecture.id}) }}">Modifier</a>
 
     {{ include('prefecture/_delete_form.html.twig') }}
 {% endblock %}

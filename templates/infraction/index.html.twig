@@ -29,17 +29,17 @@
                 <td>{{ infraction.conduiteSansPermis ? 'Yes' : 'No' }}</td>
                 <td>{{ infraction.conduiteSansAssurance ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('infraction_show', {'id': infraction.id}) }}">show</a>
-                    <a href="{{ path('infraction_edit', {'id': infraction.id}) }}">edit</a>
+                    <a href="{{ path('infraction_show', {'id': infraction.id}) }}">Voir</a>
+                    <a href="{{ path('infraction_edit', {'id': infraction.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucune infraction enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('infraction_new') }}">Create new</a>
+    <a href="{{ path('infraction_new') }}">Nouveau</a>
 {% endblock %}

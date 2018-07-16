@@ -28,6 +28,10 @@ class StatutAnimateur
      */
     private $animateurs;
 
+    public function __toString() {
+        return $this->status_nom;
+    }
+
     public function __construct()
     {
         $this->animateurs = new ArrayCollection();
