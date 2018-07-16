@@ -152,7 +152,7 @@ class Tribunal
         return $this->nature_tribunal_id;
     }
 
-    public function setNatureTribunalId(?NatureTribunal $tribunal_nature): self
+    public function setNatureTribunalId(?NatureTribunal $nature_tribunal_id): self
     {
         $this->nature_tribunal_id = $nature_tribunal_id;
 
