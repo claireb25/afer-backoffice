@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Infraction{% endblock %}
+{% block title %}Modification Infraction{% endblock %}
 
 {% block body %}
-    <h1>Edit Infraction</h1>
+    <h1>Modification Infraction</h1>
 
     {{ include('infraction/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('infraction_index') }}">retour</a>
+    <a href="{{ path('infraction_index') }}">Retour</a>
 
     {{ include('infraction/_delete_form.html.twig') }}
 {% endblock %}

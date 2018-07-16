@@ -21,17 +21,17 @@
                 <td>{{ permi.numeroPermis }}</td>
                 <td>{{ permi.delivreLe ? permi.delivreLe|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('permis_show', {'id': permi.id}) }}">show</a>
-                    <a href="{{ path('permis_edit', {'id': permi.id}) }}">edit</a>
+                    <a href="{{ path('permis_show', {'id': permi.id}) }}">Voir</a>
+                    <a href="{{ path('permis_edit', {'id': permi.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun enregistrement de permis</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('permis_new') }}">Create new</a>
+    <a href="{{ path('permis_new') }}">Nouveau</a>
 {% endblock %}
