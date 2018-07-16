@@ -44,19 +44,19 @@ class Tribunal
     private $bordereaus;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Autorite", inversedBy="tribunals")
-     */
-    private $autorite_id;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $tribunal_nature;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $tribunal_service;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\NatureTribunal", inversedBy="tribunals")
+     */
+    private $tribunal_nature_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\AutoriteTribunal", inversedBy="tribunals")
+     */
+    private $autorite_tribunal_id;
 
     public function __construct()
     {
@@ -147,30 +147,6 @@ class Tribunal
         return $this;
     }
 
-    public function getAutoriteId(): ?Autorite
-    {
-        return $this->autorite_id;
-    }
-
-    public function setAutoriteId(?Autorite $autorite_id): self
-    {
-        $this->autorite_id = $autorite_id;
-
-        return $this;
-    }
-
-    public function getTribunalNature(): ?string
-    {
-        return $this->tribunal_nature;
-    }
-
-    public function setTribunalNature(?string $tribunal_nature): self
-    {
-        $this->tribunal_nature = $tribunal_nature;
-
-        return $this;
-    }
-
     public function getTribunalService(): ?string
     {
         return $this->tribunal_service;
@@ -179,6 +155,30 @@ class Tribunal
     public function setTribunalService(?string $tribunal_service): self
     {
         $this->tribunal_service = $tribunal_service;
+
+        return $this;
+    }
+
+    public function getTribunalNatureId(): ?NatureTribunal
+    {
+        return $this->tribunal_nature_id;
+    }
+
+    public function setTribunalNatureId(?NatureTribunal $tribunal_nature_id): self
+    {
+        $this->tribunal_nature = $tribunal_nature;
+
+        return $this;
+    }
+
+    public function getAutoriteTribunalId(): ?AutoriteTribunal
+    {
+        return $this->autorite_tribunal_id;
+    }
+
+    public function setAutoriteTribunalId(?AutoriteTribunal $autorite_tribunal_id): self
+    {
+        $this->autorite_tribunal_id = $autorite_tribunal_id;
 
         return $this;
     }

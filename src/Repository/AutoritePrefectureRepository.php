@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Autorite;
+use App\Entity\AutoritePrefecture;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Autorite|null find($id, $lockMode = null, $lockVersion = null)
- * @method Autorite|null findOneBy(array $criteria, array $orderBy = null)
- * @method Autorite[]    findAll()
- * @method Autorite[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method AutoritePrefecture|null find($id, $lockMode = null, $lockVersion = null)
+ * @method AutoritePrefecture|null findOneBy(array $criteria, array $orderBy = null)
+ * @method AutoritePrefecture[]    findAll()
+ * @method AutoritePrefecture[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AutoriteRepository extends ServiceEntityRepository
+class AutoritePrefectureRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Autorite::class);
+        parent::__construct($registry, AutoritePrefecture::class);
     }
 
 //    /**
-//     * @return Autorite[] Returns an array of Autorite objects
+//     * @return AutoritePrefecture[] Returns an array of AutoritePrefecture objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class AutoriteRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Autorite
+    public function findOneBySomeField($value): ?AutoritePrefecture
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

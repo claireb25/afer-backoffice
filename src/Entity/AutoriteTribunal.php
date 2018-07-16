@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AutoriteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\AutoriteTribunalRepository")
  */
-class Autorite
+class AutoriteTribunal
 {
     /**
      * @ORM\Id()
@@ -24,23 +24,13 @@ class Autorite
     private $autorite_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="autorite_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="autorite_tribunal_id")
      */
     private $tribunals;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="autorite_id")
-     */
-    private $prefectures;
-
-    public function __toString() {
-        return $this->autorite_nom;
-    }
 
     public function __construct()
     {
         $this->tribunals = new ArrayCollection();
-        $this->prefectures = new ArrayCollection();
     }
 
     public function getId()
@@ -72,7 +62,7 @@ class Autorite
     {
         if (!$this->tribunals->contains($tribunal)) {
             $this->tribunals[] = $tribunal;
-            $tribunal->setAutoriteId($this);
+            $tribunal->setAutoriteTribunalId($this);
         }
 
         return $this;
@@ -83,39 +73,8 @@ class Autorite
         if ($this->tribunals->contains($tribunal)) {
             $this->tribunals->removeElement($tribunal);
             // set the owning side to null (unless already changed)
-            if ($tribunal->getAutoriteId() === $this) {
-                $tribunal->setAutoriteId(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Prefecture[]
-     */
-    public function getPrefectures(): Collection
-    {
-        return $this->prefectures;
-    }
-
-    public function addPrefecture(Prefecture $prefecture): self
-    {
-        if (!$this->prefectures->contains($prefecture)) {
-            $this->prefectures[] = $prefecture;
-            $prefecture->setAutoriteId($this);
-        }
-
-        return $this;
-    }
-
-    public function removePrefecture(Prefecture $prefecture): self
-    {
-        if ($this->prefectures->contains($prefecture)) {
-            $this->prefectures->removeElement($prefecture);
-            // set the owning side to null (unless already changed)
-            if ($prefecture->getAutoriteId() === $this) {
-                $prefecture->setAutoriteId(null);
+            if ($tribunal->getAutoriteTribunalId() === $this) {
+                $tribunal->setAutoriteTribunalId(null);
             }
         }
 

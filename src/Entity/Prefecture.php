@@ -49,19 +49,19 @@ class Prefecture
     private $permis;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Autorite", inversedBy="prefectures")
-     */
-    private $autorite_id;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $prefecture_nature;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $prefecture_service;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\NaturePrefecture", inversedBy="prefectures")
+     */
+    private $prefecture_nature_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\AutoritePrefecture", inversedBy="prefectures")
+     */
+    private $autorite_prefecture_id;
 
     public function __construct()
     {
@@ -184,30 +184,6 @@ class Prefecture
         return $this;
     }
 
-    public function getAutoriteId(): ?Autorite
-    {
-        return $this->autorite_id;
-    }
-
-    public function setAutoriteId(?Autorite $autorite_id): self
-    {
-        $this->autorite_id = $autorite_id;
-
-        return $this;
-    }
-
-    public function getPrefectureNature(): ?string
-    {
-        return $this->prefecture_nature;
-    }
-
-    public function setPrefectureNature(?string $prefecture_nature): self
-    {
-        $this->prefecture_nature = $prefecture_nature;
-
-        return $this;
-    }
-
     public function getPrefectureService(): ?string
     {
         return $this->prefecture_service;
@@ -216,6 +192,30 @@ class Prefecture
     public function setPrefectureService(?string $prefecture_service): self
     {
         $this->prefecture_service = $prefecture_service;
+
+        return $this;
+    }
+
+    public function getPrefectureNatureId(): ?NaturePrefecture
+    {
+        return $this->prefecture_nature_id;
+    }
+
+    public function setPrefectureNatureId(?NaturePrefecture $prefecture_nature_id): self
+    {
+        $this->prefecture_nature_id = $prefecture_nature_id;
+
+        return $this;
+    }
+
+    public function getAutoritePrefectureId(): ?AutoritePrefecture
+    {
+        return $this->autorite_prefecture_id;
+    }
+
+    public function setAutoritePrefectureId(?AutoritePrefecture $autorite_prefecture_id): self
+    {
+        $this->autorite_prefecture_id = $autorite_prefecture_id;
 
         return $this;
     }
