@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ServiceTribunal{% endblock %}
+
+{% block body %}
+    <h1>ServiceTribunal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ service_tribunal.id }}</td>
+            </tr>
+            <tr>
+                <th>Service_nom</th>
+                <td>{{ service_tribunal.serviceNom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('service_tribunal_index') }}">back to list</a>
+
+    <a href="{{ path('service_tribunal_edit', {'id': service_tribunal.id}) }}">edit</a>
+
+    {{ include('service_tribunal/_delete_form.html.twig') }}
+{% endblock %}

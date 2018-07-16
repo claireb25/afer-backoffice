@@ -28,6 +28,11 @@ class AutoritePrefecture
      */
     private $prefectures;
 
+    public function __toString()
+    {
+        return $this->autorite_nom;
+    }
+
     public function __construct()
     {
         $this->prefectures = new ArrayCollection();

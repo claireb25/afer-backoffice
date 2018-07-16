@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AutoriteTribunalRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ServiceTribunalRepository")
  */
-class AutoriteTribunal
+class ServiceTribunal
 {
     /**
      * @ORM\Id()
@@ -21,18 +21,17 @@ class AutoriteTribunal
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $autorite_nom;
+    private $service_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="autorite_tribunal_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="service_tribunal_id")
      */
     private $tribunals;
-
-
+    
     public function __toString()
-{
-    return $this->autorite_nom;
-}
+    {
+        return $this->service_nom;
+    }
 
     public function __construct()
     {
@@ -44,14 +43,14 @@ class AutoriteTribunal
         return $this->id;
     }
 
-    public function getAutoriteNom(): ?string
+    public function getServiceNom(): ?string
     {
-        return $this->autorite_nom;
+        return $this->service_nom;
     }
 
-    public function setAutoriteNom(?string $autorite_nom): self
+    public function setServiceNom(?string $service_nom): self
     {
-        $this->autorite_nom = $autorite_nom;
+        $this->service_nom = $service_nom;
 
         return $this;
     }
@@ -68,7 +67,7 @@ class AutoriteTribunal
     {
         if (!$this->tribunals->contains($tribunal)) {
             $this->tribunals[] = $tribunal;
-            $tribunal->setAutoriteTribunalId($this);
+            $tribunal->setServiceTribunalId($this);
         }
 
         return $this;
@@ -79,8 +78,8 @@ class AutoriteTribunal
         if ($this->tribunals->contains($tribunal)) {
             $this->tribunals->removeElement($tribunal);
             // set the owning side to null (unless already changed)
-            if ($tribunal->getAutoriteTribunalId() === $this) {
-                $tribunal->setAutoriteTribunalId(null);
+            if ($tribunal->getServiceTribunalId() === $this) {
+                $tribunal->setServiceTribunalId(null);
             }
         }
 

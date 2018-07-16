@@ -49,11 +49,6 @@ class Prefecture
     private $permis;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $prefecture_service;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\NaturePrefecture", inversedBy="prefectures")
      */
     private $prefecture_nature_id;
@@ -62,6 +57,11 @@ class Prefecture
      * @ORM\ManyToOne(targetEntity="App\Entity\AutoritePrefecture", inversedBy="prefectures")
      */
     private $autorite_prefecture_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\ServicePrefecture", inversedBy="prefectures")
+     */
+    private $service_prefecture_id;
 
     public function __construct()
     {
@@ -184,18 +184,6 @@ class Prefecture
         return $this;
     }
 
-    public function getPrefectureService(): ?string
-    {
-        return $this->prefecture_service;
-    }
-
-    public function setPrefectureService(?string $prefecture_service): self
-    {
-        $this->prefecture_service = $prefecture_service;
-
-        return $this;
-    }
-
     public function getPrefectureNatureId(): ?NaturePrefecture
     {
         return $this->prefecture_nature_id;
@@ -216,6 +204,18 @@ class Prefecture
     public function setAutoritePrefectureId(?AutoritePrefecture $autorite_prefecture_id): self
     {
         $this->autorite_prefecture_id = $autorite_prefecture_id;
+
+        return $this;
+    }
+
+    public function getServicePrefectureId(): ?ServicePrefecture
+    {
+        return $this->service_prefecture_id;
+    }
+
+    public function setServicePrefectureId(?ServicePrefecture $service_prefecture_id): self
+    {
+        $this->service_prefecture_id = $service_prefecture_id;
 
         return $this;
     }

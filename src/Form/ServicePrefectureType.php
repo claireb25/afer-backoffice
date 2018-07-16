@@ -2,30 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Tribunal;
+use App\Entity\ServicePrefecture;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Tribunal1Type extends AbstractType
+class ServicePrefectureType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('tribunal_nom')
-            ->add('nature_tribunal_id')
-            ->add('service_tribunal_id')
-            ->add('autorite_tribunal_id')
-            ->add('adresse')
-            ->add('code_postal')
-            ->add('commune')
+            ->add('service_nom')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Tribunal::class,
+            'data_class' => ServicePrefecture::class,
         ]);
     }
 }

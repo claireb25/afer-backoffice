@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\NaturePrefectureRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ServicePrefectureRepository")
  */
-class NaturePrefecture
+class ServicePrefecture
 {
     /**
      * @ORM\Id()
@@ -21,16 +21,16 @@ class NaturePrefecture
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $nature_nom;
+    private $service_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="prefecture_nature_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="service_prefecture_id")
      */
     private $prefectures;
 
     public function __toString()
     {
-        return $this->nature_nom;
+        return $this->service_nom;
     }
 
     public function __construct()
@@ -43,14 +43,14 @@ class NaturePrefecture
         return $this->id;
     }
 
-    public function getNatureNom(): ?string
+    public function getServiceNom(): ?string
     {
-        return $this->nature_nom;
+        return $this->service_nom;
     }
 
-    public function setNatureNom(?string $nature_nom): self
+    public function setServiceNom(?string $service_nom): self
     {
-        $this->nature_nom = $nature_nom;
+        $this->service_nom = $service_nom;
 
         return $this;
     }
@@ -67,7 +67,7 @@ class NaturePrefecture
     {
         if (!$this->prefectures->contains($prefecture)) {
             $this->prefectures[] = $prefecture;
-            $prefecture->setPrefectureNatureId($this);
+            $prefecture->setServicePrefectureId($this);
         }
 
         return $this;
@@ -78,8 +78,8 @@ class NaturePrefecture
         if ($this->prefectures->contains($prefecture)) {
             $this->prefectures->removeElement($prefecture);
             // set the owning side to null (unless already changed)
-            if ($prefecture->getPrefectureNatureId() === $this) {
-                $prefecture->setPrefectureNatureId(null);
+            if ($prefecture->getServicePrefectureId() === $this) {
+                $prefecture->setServicePrefectureId(null);
             }
         }
 

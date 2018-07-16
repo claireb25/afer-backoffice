@@ -28,6 +28,11 @@ class NatureTribunal
      */
     private $tribunals;
 
+    public function __toString()
+    {
+        return $this->nature_nom;
+    }
+
     public function __construct()
     {
         $this->tribunals = new ArrayCollection();
