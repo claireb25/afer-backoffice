@@ -36,6 +36,7 @@ class MenuBuilder
         $menu->addChild('Forfaits', ['route' => 'forfait_animateur_index'])->setAttribute('class','onglet');
         $menu->addChild('Infractions', ['route' => 'infraction_index'])->setAttribute('class','onglet');
         $menu->addChild('Types d\'infractions', ['route' => 'type_infraction_index'])->setAttribute('class','onglet');
+        $menu->addChild('Civilité', ['route' => 'civilite_index'])->setAttribute('class','onglet');
         return $menu;
     }
 }
