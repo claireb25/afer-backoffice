@@ -84,4 +84,5 @@ class ForfaitAnimateur
 
         return $this;
     }
+
 }
