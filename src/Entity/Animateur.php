@@ -118,6 +118,8 @@ class Animateur
      */
     private $stage_id;
 
+    
+
     public function __construct()
     {
         $this->stage_id = new ArrayCollection();

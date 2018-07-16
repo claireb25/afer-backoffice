@@ -28,6 +28,7 @@ class ForfaitAnimateur
      */
     private $animateurs;
 
+ 
     public function __construct()
     {
         $this->animateurs = new ArrayCollection();
@@ -80,4 +81,5 @@ class ForfaitAnimateur
 
         return $this;
     }
+
 }
