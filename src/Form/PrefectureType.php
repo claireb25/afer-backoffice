@@ -13,6 +13,9 @@ class PrefectureType extends AbstractType
     {
         $builder
             ->add('prefecture_nom')
+            ->add('prefecture_nature')
+            ->add('prefecture_service')
+            ->add('autorite_id')
             ->add('adresse')
             ->add('code_postal')
             ->add('commune')
