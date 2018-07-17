@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ServicePrefecture index{% endblock %}
+{% block title %}Liste des services (préfecture){% endblock %}
 
 {% block body %}
-    <h1>ServicePrefecture index</h1>
+    <h1>Liste des services (préfecture)</h1>
 
     <table class="table">
         <thead>
@@ -19,17 +19,23 @@
                 <td>{{ service_prefecture.id }}</td>
                 <td>{{ service_prefecture.serviceNom }}</td>
                 <td>
-                    <a href="{{ path('service_prefecture_show', {'id': service_prefecture.id}) }}">show</a>
-                    <a href="{{ path('service_prefecture_edit', {'id': service_prefecture.id}) }}">edit</a>
+                    <a href="{{ path('service_prefecture_show', {'id': service_prefecture.id}) }}">
+                        <button class="btn">Voir</button>
+                    </a>
+                    <a href="{{ path('service_prefecture_edit', {'id': service_prefecture.id}) }}">
+                        <button class="btn">Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun service enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('service_prefecture_new') }}">Create new</a>
+    <a href="{{ path('service_prefecture_new') }}">
+        <button class="btn">Nouveau</button>
+    </a>
 {% endblock %}

@@ -24,7 +24,7 @@ class AutoritePrefecture
     private $autorite_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="autorite_prefecture_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="autorite_prefecture_id", orphanRemoval=true)
      */
     private $prefectures;
 
