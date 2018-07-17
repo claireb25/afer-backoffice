@@ -19,8 +19,12 @@
                 <td>{{ statut_animateur.id }}</td>
                 <td>{{ statut_animateur.statusNom }}</td>
                 <td>
-                    <a href="{{ path('statut_animateur_show', {'id': statut_animateur.id}) }}">Voir</a>
-                    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">Modifier</a>
+                    <a href="{{ path('statut_animateur_show', {'id': statut_animateur.id}) }}">
+                        <button class="btn">Voir</button>
+                    </a>
+                    <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">
+                        <button class="btn">Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +35,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('statut_animateur_new') }}">Nouveau</a>
+    <a href="{{ path('statut_animateur_new') }}">
+        <button class="btn">Nouveau</button>
+    </a>
 {% endblock %}

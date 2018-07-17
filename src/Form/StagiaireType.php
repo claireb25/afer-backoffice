@@ -3,25 +3,38 @@
 namespace App\Form;
 
 use App\Entity\Stagiaire;
-use Symfony\Component\Form\AbstractType;
+use App\Entity\Civilite;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class StagiaireType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('civilite_id')
+            ->add('civilite_id', EntityType::class,
+            array(  'class' => Civilite::class,
+                    'label' => 'Civilité'
+            ,))
             ->add('nom')
-            ->add('nom_naissance')
-            ->add('prenom')
-            ->add('date_naissance')
-            ->add('lieu_naissance', TextType::class, array(
-                'label'=> 'Lieu de naissance',
-            ) 
-            )
+            ->add('nom_naissance', TextType::class,
+            array ( 'label' => 'Nom de naissance'
+            ,))
+            ->add('prenom', TextType::class,
+            array ( 'label' => 'Prénom'
+            ,))
+            ->add('date_naissance', DateType::class,
+            array(  'label' => 'Date de naissance',
+                    'widget' => 'choice',
+                    'years' => range(date('Y'), date('Y')-100)
+            ,))
+            ->add('lieu_naissance', TextType::class,
+            array ( 'label' => 'Ville de naissance'
+            ,))
             ->add('adresse')
             ->add('code_postal')
             ->add('commune')
@@ -32,8 +45,8 @@ class StagiaireType extends AbstractType
             ->add('carte_avantages_jeunes')
             ->add('partenaires')
             ->add('adherents')
-            // ->add('permis')
-            // ->add('liaisonStagiaireStageDossierCasBordereau')
+            ->add('permis')
+            ->add('liaisonStagiaireStageDossierCasBordereau')
         ;
     }
 

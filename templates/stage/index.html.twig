@@ -23,8 +23,12 @@
                 <td>{{ stage.date ? stage.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ stage.stageHpo ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('stage_show', {'id': stage.id}) }}">Voir</a>
-                    <a href="{{ path('stage_edit', {'id': stage.id}) }}">Modifier</a>
+                    <a href="{{ path('stage_show', {'id': stage.id}) }}">
+                        <button class="btn">Voir</button>
+                    </a>
+                    <a href="{{ path('stage_edit', {'id': stage.id}) }}">
+                        <button class="btn">Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +39,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('stage_new') }}">Nouveau</a>
+    <a href="{{ path('stage_new') }}">
+        <button class="btn">Nouveau</button>
+    </a>
 {% endblock %}
