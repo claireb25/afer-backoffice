@@ -4,17 +4,16 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            <!--<th>Id</th>-->
             <th>Lieu_nom</th>
             <th>Etablissement_nom</th>
             <th>Adresse</th>
             <th>Code_postal</th>
             <th>Commune</th>
             <th>Tel</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Divers</th>
-            <th>actions</th>
+            <!--<th>Latitude</th>-->
+            <!--<th>Longitude</th>-->
+            <!--<th>Divers</th>-->
         </tr>
     </thead>
     <tbody>
@@ -23,16 +22,16 @@
         </a>
         {% for lieu_stage in lieu_stages %}
         <tr>
-            <td>{{ lieu_stage.id }}</td>
+            <!--<td>{{ lieu_stage.id }}</td>-->
             <td>{{ lieu_stage.lieuNom }}</td>
             <td>{{ lieu_stage.etablissementNom }}</td>
             <td>{{ lieu_stage.adresse }}</td>
             <td>{{ lieu_stage.codePostal }}</td>
             <td>{{ lieu_stage.commune }}</td>
             <td>{{ lieu_stage.tel }}</td>
-            <td>{{ lieu_stage.latitude }}</td>
-            <td>{{ lieu_stage.longitude }}</td>
-            <td>{{ lieu_stage.divers }}</td>
+            <!--<td>{{ lieu_stage.latitude }}</td>-->
+            <!--<td>{{ lieu_stage.longitude }}</td>-->
+            <!--<td>{{ lieu_stage.divers }}</td>-->
             <td>
                 <a href="{{ path('lieu_stage_show', {'id': lieu_stage.id}) }}">
                     <button>Voir</button>
