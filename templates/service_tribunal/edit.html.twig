@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modification Service Tribunal{% endblock %}
+{% block title %}Modification service tribunal{% endblock %}
 
 {% block body %}
-    <h1>Modification Service Tribunal</h1>
+    <h1>Modification service tribunal</h1>
 
     {{ include('service_tribunal/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('service_tribunal_index') }}">Retour</a>
+    <a href="{{ path('service_tribunal_index') }}">
+        <button class="btn">Retour</button>
+    </a>
 
     {{ include('service_tribunal/_delete_form.html.twig') }}
 {% endblock %}

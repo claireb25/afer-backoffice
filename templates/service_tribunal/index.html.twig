@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Service Tribunal index{% endblock %}
+{% block title %}Liste des services (tribunal){% endblock %}
 
 {% block body %}
-    <h1>Service Tribunal index</h1>
+    <h1>Liste des services (tribunal)</h1>
 
     <table class="table">
         <thead>
@@ -19,8 +19,12 @@
                 <td>{{ service_tribunal.id }}</td>
                 <td>{{ service_tribunal.serviceNom }}</td>
                 <td>
-                    <a href="{{ path('service_tribunal_show', {'id': service_tribunal.id}) }}">Voir</a>
-                    <a href="{{ path('service_tribunal_edit', {'id': service_tribunal.id}) }}">Modifier</a>
+                    <a href="{{ path('service_tribunal_show', {'id': service_tribunal.id}) }}">
+                        <button class="btn">Voir</button>
+                    </a>
+                    <a href="{{ path('service_tribunal_edit', {'id': service_tribunal.id}) }}">
+                        <button class="btn">Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +35,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('service_tribunal_new') }}">Nouveau</a>
+    <a href="{{ path('service_tribunal_new') }}">
+        <button class="btn">Modifier</button>
+    </a>
 {% endblock %}
