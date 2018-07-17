@@ -6,10 +6,10 @@
     <h1>Modifier {{ tribunal.TribunalNom}}</h1>
         <tr>
             <td> {{ include('tribunal/_form.html.twig', {'button_label': 'Modifier'}) }}</td>
-            <td>{{ include('tribunal/_delete_form.html.twig') }}</td>
+
         </tr>
 
-    <a href="{{ path('tribunal_index') }}">Retour</a>
+    <a href="{{ path('tribunal_index') }}"><button>Retour</button></a>
 
   
 {% endblock %}

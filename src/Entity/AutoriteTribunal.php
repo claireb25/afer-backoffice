@@ -24,7 +24,7 @@ class AutoriteTribunal
     private $autorite_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="autorite_tribunal_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="autorite_tribunal_id", orphanRemoval=true)
      */
     private $tribunals;
 

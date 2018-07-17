@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau Forfait Animateur{% endblock %}
+{% block title %}Nouveau forfait {% endblock %}
 
 {% block body %}
-    <h1>Nouveau Forfait Animateur</h1>
+    <h1>Nouveau forfait </h1>
 
-    {{ include('forfait_animateur/_form.html.twig') }}
+    {{ include('forfait_animateur/_form.html.twig') }} 
 
-    <a href="{{ path('forfait_animateur_index') }}">Retour</a>
+    <a href="{{ path('forfait_animateur_index') }}"><button>Retour</button></a>
 {% endblock %} 
