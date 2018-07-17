@@ -15,11 +15,10 @@
                 <th>Téléphone portable</th>
                 <th>Télépone fixe</th>
                 <th>Email</th>
-                <th>Repas</th>
             </tr>
         </thead>
         <tbody>
-        <a href="{{ path('animateur_new') }}"><button>Nouveau</button></a>
+        <a href="{{ path('animateur_new') }}"><button> + nouveau</button></a>
         {% for animateur in animateurs %}
             <tr>
                 <td>{{ animateur.nom }}</td>
@@ -29,7 +28,6 @@
                 <td>{{ animateur.telPortable }}</td>
                 <td>{{ animateur.telFixe }}</td>
                 <td>{{ animateur.email }}</td>
-                <td>{{ animateur.repas ? 'Oui' : 'Non' }}</td>
                 <td><a href="{{ path('animateur_show', {'id': animateur.id}) }}"><button>Voir</button></a></td>
                 <td><a href="{{ path('animateur_edit', {'id': animateur.id}) }}"><button>Modifier</button></a></td>
                 <td>{{ include('animateur/_delete_form.html.twig') }}</td>
@@ -42,6 +40,6 @@
         </tbody>
     </table>
     
-    <a href="{{ path('animateur_new') }}"><button>Nouveau</button></a>
+    <a href="{{ path('animateur_new') }}"><button> + nouveau</button></a>
 
 {% endblock %}

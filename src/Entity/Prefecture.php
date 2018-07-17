@@ -63,6 +63,10 @@ class Prefecture
      */
     private $service_prefecture_id;
 
+    public function __toString() {
+        return $this->prefecture_nom;
+    }
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();

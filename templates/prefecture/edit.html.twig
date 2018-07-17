@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modification prefecture{% endblock %}
+{% block title %}Modification préfecture{% endblock %}
 
 {% block body %}
-    <h1>Modification de la prefecture</h1>
+    <h1>Modification de la préfecture</h1>
 
     {{ include('prefecture/_form.html.twig', {'button_label': 'Envoyer'}) }}
     <a href="{{ path('prefecture_index') }}"><button>Retour</button></a>

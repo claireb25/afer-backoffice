@@ -24,7 +24,7 @@ class NatureTribunal
     private $nature_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="tribunal_nature")
+     * @ORM\OneToMany(targetEntity="App\Entity\Tribunal", mappedBy="tribunal_nature", orphanRemoval=true)
      */
     private $tribunals;
 

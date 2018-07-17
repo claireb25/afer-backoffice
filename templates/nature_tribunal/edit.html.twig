@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit NatureTribunal{% endblock %}
+{% block title %}Modifier nature tribunal{% endblock %}
 
 {% block body %}
-    <h1>Edit NatureTribunal</h1>
+    <h1>Modifier la nature du tribunal</h1>
 
-    {{ include('nature_tribunal/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('nature_tribunal/_form.html.twig', {'button_label': 'Envoyer'}) }}
 
-    <a href="{{ path('nature_tribunal_index') }}">back to list</a>
+    <a href="{{ path('nature_tribunal_index') }}"><button>Retour</button></a>
 
     {{ include('nature_tribunal/_delete_form.html.twig') }}
 {% endblock %}

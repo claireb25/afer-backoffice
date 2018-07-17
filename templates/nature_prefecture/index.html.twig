@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NaturePrefecture index{% endblock %}
+{% block title %}Liste nature préfecture{% endblock %}
 
 {% block body %}
-    <h1>NaturePrefecture index</h1>
+    <h1>Liste des natures des préfectures</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nature_nom</th>
-                <th>actions</th>
+                <th>Nom</th>
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('nature_prefecture_new') }}"><button> + nouveau</button></a>
         {% for nature_prefecture in nature_prefectures %}
             <tr>
-                <td>{{ nature_prefecture.id }}</td>
+            <td>{{ nature_prefecture.id }}</td>
                 <td>{{ nature_prefecture.natureNom }}</td>
                 <td>
-                    <a href="{{ path('nature_prefecture_show', {'id': nature_prefecture.id}) }}">show</a>
-                    <a href="{{ path('nature_prefecture_edit', {'id': nature_prefecture.id}) }}">edit</a>
+                    <a href="{{ path('nature_prefecture_show', {'id': nature_prefecture.id}) }}"><button>Voir</button></a>
+                    <a href="{{ path('nature_prefecture_edit', {'id': nature_prefecture.id}) }}"><button>Modifier</button</a>
                 </td>
+                <td>{{ include('nature_prefecture/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune nature de préfecture enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('nature_prefecture_new') }}">Create new</a>
+    <a href="{{ path('nature_prefecture_new') }}"><button> + nouveau</button></a>
 {% endblock %}
