@@ -45,7 +45,7 @@ class Tribunal1Type extends AbstractType
             ->add('code_postal', TextType::class, array(
                 'label'=> 'Code postal',))
             ->add('commune', TextType::class, array(
-                'label'=> 'Commune/Ville',)
+                'label'=> 'Ville',)
             )
         ;
     }

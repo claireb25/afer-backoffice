@@ -3,28 +3,32 @@
 {% block title %}Tribunal{% endblock %}
 
 {% block body %}
-    <h1>Tribunal</h1>
+    <h1> Tribunal : {{ tribunal.tribunalNom }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ tribunal.id }}</td>
+                <th>Nature</th>
+                <td> {{ tribunal.NatureTribunalId }} </tb>
             </tr>
             <tr>
-                <th>Tribunal_nom</th>
-                <td>{{ tribunal.tribunalNom }}</td>
+                <th>Service</th>
+                <td> {{ tribunal.ServiceTribunalId }}</td>
+            </tr>
+             <tr>
+                <th>Autorité</th>
+                <td> {{ tribunal.AutoriteTribunalId }}</td>
             </tr>
             <tr>
                 <th>Adresse</th>
                 <td>{{ tribunal.adresse }}</td>
             </tr>
             <tr>
-                <th>Code_postal</th>
+                <th>Code postal</th>
                 <td>{{ tribunal.codePostal }}</td>
             </tr>
             <tr>
-                <th>Commune</th>
+                <th>Ville</th>
                 <td>{{ tribunal.commune }}</td>
             </tr>
         </tbody>
