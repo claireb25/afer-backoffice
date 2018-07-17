@@ -9,6 +9,9 @@
         <thead>
             <tr>
                 <th>Nom</th>
+                <th>Autorité</th>
+                <th>Nature</th>
+                <th>Service</th>
                 <th>Adresse</th>
                 <th>Code postal</th>
                 <th>Commune</th>
@@ -20,6 +23,9 @@
         {% for prefecture in prefectures %}
             <tr>
                 <td>{{ prefecture.prefectureNom }}</td>
+                <td>{{ prefecture.autoritePrefectureId }}</td>
+                <td>{{ prefecture.prefectureNatureId }}</td>
+                <td>{{ prefecture.servicePrefectureId }}</td>
                 <td>{{ prefecture.adresse }}</td>
                 <td>{{ prefecture.codePostal }}</td>
                 <td>{{ prefecture.commune }}</td>
