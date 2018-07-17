@@ -3,24 +3,20 @@
 {% block title %}Forfait Animateur{% endblock %}
 
 {% block body %}
-    <h1>Forfait Animateur</h1>
+    <h1>Forfait : {{ forfait_animateur.forfaitPrix}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ forfait_animateur.id }}</td>
-            </tr>
-            <tr>
-                <th>Forfait_prix</th>
+                <th>Forfait</th>
                 <td>{{ forfait_animateur.forfaitPrix }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('forfait_animateur_index') }}">Retour</a>
+    <a href="{{ path('forfait_animateur_index') }}"><button>Retour</button></a>
 
-    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}">Modifier</a>
+    <a href="{{ path('forfait_animateur_edit', {'id': forfait_animateur.id}) }}"><button>Modifier</button></a>
 
     {{ include('forfait_animateur/_delete_form.html.twig') }}
 {% endblock %}
