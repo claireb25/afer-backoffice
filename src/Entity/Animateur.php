@@ -119,7 +119,7 @@ class Animateur
     private $stage_id;
 
     public function __toString() {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function __construct()

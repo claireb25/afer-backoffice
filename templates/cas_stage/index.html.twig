@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CasStage index{% endblock %}
+{% block title %}Liste des cas de stage{% endblock %}
 
 {% block body %}
-    <h1>CasStage index</h1>
+    <h1>Liste des cas de stage</h1>
 
     <table class="table">
         <thead>
@@ -21,17 +21,23 @@
                 <td>{{ cas_stage.casNom }}</td>
                 <td>{{ cas_stage.casPrix }}</td>
                 <td>
-                    <a href="{{ path('cas_stage_show', {'id': cas_stage.id}) }}">Voir</a>
-                    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">Edit</a>
+                    <a href="{{ path('cas_stage_show', {'id': cas_stage.id}) }}">
+                        <button class="btn">Voir</button>
+                    </a>
+                    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">
+                        <button class="btn">Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">Aucun cas enregistré</td>
+                <td colspan="4">Aucun cas de stage enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('cas_stage_new') }}">Nouveau</a>
+    <a href="{{ path('cas_stage_new') }}">
+        <button class="btn">Nouveau</button>
+    </a>
 {% endblock %}
