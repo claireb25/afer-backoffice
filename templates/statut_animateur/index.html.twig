@@ -8,12 +8,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Status_nom</th>
-                <th>actions</th>
+                <th>Nom</th>
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('statut_animateur_new') }}">
+            <button class="btn">Nouveau</button>
+        </a>
         {% for statut_animateur in statut_animateurs %}
             <tr>
                 <td>{{ statut_animateur.id }}</td>
@@ -22,10 +23,13 @@
                     <a href="{{ path('statut_animateur_show', {'id': statut_animateur.id}) }}">
                         <button class="btn">Voir</button>
                     </a>
+                </td>
+                <td>
                     <a href="{{ path('statut_animateur_edit', {'id': statut_animateur.id}) }}">
                         <button class="btn">Modifier</button>
                     </a>
                 </td>
+                <td>{{ include('statut_animateur/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
