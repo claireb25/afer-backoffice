@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New NatureTribunal{% endblock %}
+{% block title %}Nouvelle nature tribunal{% endblock %}
 
 {% block body %}
-    <h1>Create new NatureTribunal</h1>
+    <h1>Créer une nouvelle nature de tribunal</h1>
 
     {{ include('nature_tribunal/_form.html.twig') }}
 
-    <a href="{{ path('nature_tribunal_index') }}">back to list</a>
+    <a href="{{ path('nature_tribunal_index') }}"><button>Retour</button></a>
 {% endblock %}

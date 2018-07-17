@@ -24,7 +24,7 @@ class NaturePrefecture
     private $nature_nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="prefecture_nature_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prefecture", mappedBy="prefecture_nature_id", orphanRemoval=true)
      */
     private $prefectures;
 
