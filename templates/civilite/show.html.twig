@@ -1,16 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Civilité{% endblock %}
+{% block title %}{{civilite.nom}}{% endblock %}
 
 {% block body %}
-    <h1>Civilité</h1>
+    <h1>Civilité : {{civilite.nom}}</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ civilite.id }}</td>
-            </tr>
             <tr>
                 <th>Nom</th>
                 <td>{{ civilite.nom }}</td>
@@ -18,9 +14,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('civilite_index') }}">Retour</a>
+    <a href="{{ path('civilite_index') }}"><button>Retour</button></a>
 
-    <a href="{{ path('civilite_edit', {'id': civilite.id}) }}">Edit</a>
+    <a href="{{ path('civilite_edit', {'id': civilite.id}) }}"><button>Modifier</button></a>
 
-    {{ include('civilite/_delete_form.html.twig') }}
+
 {% endblock %}

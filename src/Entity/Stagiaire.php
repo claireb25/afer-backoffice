@@ -107,10 +107,10 @@ class Stagiaire
 
     private $liaisonStagiaireStageDossierCasBordereau;
 
-    // public function __toString() {
-
-    //     return $this->cvilite_id;
-    // }
+    public function __toString() {
+      
+        return $this->nom. ' ' .$this->prenom;
+    }
 
 
 
