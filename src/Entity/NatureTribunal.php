@@ -67,7 +67,7 @@ class NatureTribunal
     {
         if (!$this->tribunals->contains($tribunal)) {
             $this->tribunals[] = $tribunal;
-            $tribunal->setTribunalNature($this);
+            $tribunal->setTribunalNatureId($this);
         }
 
         return $this;
@@ -78,8 +78,8 @@ class NatureTribunal
         if ($this->tribunals->contains($tribunal)) {
             $this->tribunals->removeElement($tribunal);
             // set the owning side to null (unless already changed)
-            if ($tribunal->getTribunalNature() === $this) {
-                $tribunal->setTribunalNature(null);
+            if ($tribunal->getTribunalNatureId() === $this) {
+                $tribunal->setTribunalNatureId(null);
             }
         }
 

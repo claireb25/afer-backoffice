@@ -3,7 +3,7 @@
 {% block title %}Modifier{% endblock %}
 
 {% block body %}
-    <h1>Modifier</h1>
+    <h1>Modifier {{ tribunal.TribunalNom}}</h1>
         <tr>
             <td> {{ include('tribunal/_form.html.twig', {'button_label': 'Modifier'}) }}</td>
             <td>{{ include('tribunal/_delete_form.html.twig') }}</td>
