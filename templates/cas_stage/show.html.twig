@@ -22,9 +22,13 @@
         </tbody>
     </table>
 
-    <a href="{{ path('cas_stage_index') }}">Retour</a>
+    <a href="{{ path('cas_stage_index') }}">
+        <button class="btn">Retour</button>
+    </a>
 
-    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">Edit</a>
+    <a href="{{ path('cas_stage_edit', {'id': cas_stage.id}) }}">
+        <button class="btn">Modifier</button>
+    </a>
 
     {{ include('cas_stage/_delete_form.html.twig') }}
 {% endblock %}
