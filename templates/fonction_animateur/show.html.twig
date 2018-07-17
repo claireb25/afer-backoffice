@@ -3,16 +3,12 @@
 {% block title %}Fonction Animateur{% endblock %}
 
 {% block body %}
-    <h1>Fonction Animateur</h1>
+    <h1>Fonction : {{ fonction_animateur.fonctionNom}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ fonction_animateur.id }}</td>
-            </tr>
-            <tr>
-                <th>Fonction_nom</th>
+                <th>Fonction</th>
                 <td>{{ fonction_animateur.fonctionNom }}</td>
             </tr>
         </tbody>
@@ -20,7 +16,7 @@
 
     <a href="{{ path('fonction_animateur_index') }}">Retour</a>
 
-    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">Modifier</a>
+    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}"><button>Modifier</button></a>
 
     {{ include('fonction_animateur/_delete_form.html.twig') }}
 {% endblock %}

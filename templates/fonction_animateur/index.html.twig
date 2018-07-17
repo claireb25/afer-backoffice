@@ -1,27 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Fonction Animateur index{% endblock %}
+{% block title %}Animateurs{% endblock %}
 
 {% block body %}
-    <h1>Fonction Animateur index</h1>
+    <h1>Liste des fonctions</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Fonction_nom</th>
-                <th>actions</th>
+                <th>Fonction</th>
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('fonction_animateur_new') }}"><button>Nouveau</button></a>
         {% for fonction_animateur in fonction_animateurs %}
             <tr>
-                <td>{{ fonction_animateur.id }}</td>
                 <td>{{ fonction_animateur.fonctionNom }}</td>
                 <td>
-                    <a href="{{ path('fonction_animateur_show', {'id': fonction_animateur.id}) }}">Voir</a>
-                    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}">Modifier</a>
+                    <a href="{{ path('fonction_animateur_show', {'id': fonction_animateur.id}) }}"><button>Voir</button></a>
+                    <a href="{{ path('fonction_animateur_edit', {'id': fonction_animateur.id}) }}"><button>Modifier</button></a>
+                   
                 </td>
+                <td>
+                 {{ include('fonction_animateur/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
@@ -31,5 +32,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('fonction_animateur_new') }}">Nouveau</a>
+    <a href="{{ path('fonction_animateur_new') }}"><button>Nouveau</button></a>
 {% endblock %}
