@@ -14,12 +14,12 @@
                 <th>Prénom</th>
                 <th>Date de naissance</th>
                 <!--<th>Lieu de naissance</th>-->
-                <th>Adresse</th>
+                <!--<th>Adresse</th>-->
                 <th>Code postal</th>
-                <!--<th>Commune</th>-->
+                <th>Commune</th>
                 <!--<th>Pays</th>-->
                 <th>Tél portable</th>
-                <th>Tel fixe</th>
+                <!--<th>Tel fixe</th>-->
                 <th>Email</th>
                 <!--<th>Carte avantages jeunes</th>-->
                 <!--<th>Partenaires</th>-->
@@ -31,22 +31,22 @@
         <a href="{{ path('stagiaire_new') }}"><button> + Nouveau</button></a>
         {% for stagiaire in stagiaires %}
             <tr>
-                <td>{{ stagiaire.id }}</td>
+                <!--<td>{{ stagiaire.id }}</td>-->
                 <td>{{ stagiaire.nom }}</td>
-                <td>{{ stagiaire.nomNaissance }}</td>
+                <!--<td>{{ stagiaire.nomNaissance }}</td>-->
                 <td>{{ stagiaire.prenom }}</td>
                 <td>{{ stagiaire.dateNaissance ? stagiaire.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ stagiaire.lieuNaissance }}</td>
-                <td>{{ stagiaire.adresse }}</td>
+                <!--<td>{{ stagiaire.lieuNaissance }}</td>-->
+                <!--<td>{{ stagiaire.adresse }}</td>-->
                 <td>{{ stagiaire.codePostal }}</td>
                 <td>{{ stagiaire.commune }}</td>
-                <td>{{ stagiaire.pays }}</td>
+                <!--<td>{{ stagiaire.pays }}</td>-->
                 <td>{{ stagiaire.telPortable }}</td>
-                <td>{{ stagiaire.telFixe }}</td>
+                <!--<td>{{ stagiaire.telFixe }}</td>-->
                 <td>{{ stagiaire.email }}</td>
-                <td>{{ stagiaire.carteAvantagesJeunes ? 'Yes' : 'No' }}</td>
-                <td>{{ stagiaire.partenaires ? 'Yes' : 'No' }}</td>
-                <td>{{ stagiaire.adherents ? 'Yes' : 'No' }}</td>
+                <!--<td>{{ stagiaire.carteAvantagesJeunes ? 'Yes' : 'No' }}</td>-->
+                <!--<td>{{ stagiaire.partenaires ? 'Yes' : 'No' }}</td>-->
+                <!--<td>{{ stagiaire.adherents ? 'Yes' : 'No' }}</td>-->
                 <td>
                    
                     <a href="{{ path('stagiaire_edit', {'id': stagiaire.id}) }}">Modifier</a>
