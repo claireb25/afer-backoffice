@@ -8,10 +8,6 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ animateur.id }}</td>
-            </tr>
-            <tr>
                 <th>Nom</th>
                 <td>{{ animateur.nom }}</td>
             </tr>
@@ -21,10 +17,10 @@
             </tr>
             <tr>
                 <th>Gta</th>
-                <td>{{ animateur.gta ? 'Yes' : 'No' }}</td>
+                <td>{{ animateur.gta ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Raison_sociale</th>
+                <th>Raison sociale</th>
                 <td>{{ animateur.raisonSociale }}</td>
             </tr>
             <tr>
@@ -32,7 +28,7 @@
                 <td>{{ animateur.adresse }}</td>
             </tr>
             <tr>
-                <th>Code_postal</th>
+                <th>Code postal</th>
                 <td>{{ animateur.codePostal }}</td>
             </tr>
             <tr>
@@ -40,15 +36,15 @@
                 <td>{{ animateur.commune }}</td>
             </tr>
             <tr>
-                <th>Region</th>
+                <th>Région</th>
                 <td>{{ animateur.region }}</td>
             </tr>
             <tr>
-                <th>Tel_portable</th>
+                <th>Téléphone portable</th>
                 <td>{{ animateur.telPortable }}</td>
             </tr>
             <tr>
-                <th>Tel_fixe</th>
+                <th>Téléphone fixe</th>
                 <td>{{ animateur.telFixe }}</td>
             </tr>
             <tr>
@@ -64,19 +60,19 @@
                 <td>{{ animateur.siret }}</td>
             </tr>
             <tr>
-                <th>Km_a_r</th>
+                <th>Kilomètres aller/retour</th>
                 <td>{{ animateur.kmAR }}</td>
             </tr>
             <tr>
                 <th>Repas</th>
-                <td>{{ animateur.repas ? 'Yes' : 'No' }}</td>
+                <td>{{ animateur.repas ? 'Oui' : 'Non' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('animateur_index') }}">Retour</a>
+    <a href="{{ path('animateur_index') }}"><button>Retour</button></a>
 
-    <a href="{{ path('animateur_edit', {'id': animateur.id}) }}">Edit</a>
+    <a href="{{ path('animateur_edit', {'id': animateur.id}) }}"><button>Modifier</button></a>
 
     {{ include('animateur/_delete_form.html.twig') }}
 {% endblock %}

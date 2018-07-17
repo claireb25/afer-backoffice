@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle Prefecture{% endblock %}
+{% block title %}Nouvelle prefecture{% endblock %}
 
 {% block body %}
-    <h1>Nouvelle Prefecture</h1>
+    <h1>Nouvelle prefecture</h1>
 
     {{ include('prefecture/_form.html.twig') }}
 
-    <a href="{{ path('prefecture_index') }}">Retour</a>
+    <a href="{{ path('prefecture_index') }}"><button>Retour</button></a>
 {% endblock %}

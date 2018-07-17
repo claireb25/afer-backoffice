@@ -8,36 +8,32 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ suivi_dossier.id }}</td>
-            </tr>
-            <tr>
                 <th>Paye</th>
-                <td>{{ suivi_dossier.paye ? 'Yes' : 'No' }}</td>
+                <td>{{ suivi_dossier.paye ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Reception_bulletin_inscription</th>
-                <td>{{ suivi_dossier.receptionBulletinInscription ? 'Yes' : 'No' }}</td>
+                <th>Reception du bulletin d'inscription</th>
+                <td>{{ suivi_dossier.receptionBulletinInscription ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Copie_cni</th>
-                <td>{{ suivi_dossier.copieCni ? 'Yes' : 'No' }}</td>
+                <th>Copie cni</th>
+                <td>{{ suivi_dossier.copieCni ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Copie_permis</th>
-                <td>{{ suivi_dossier.copiePermis ? 'Yes' : 'No' }}</td>
+                <th>Copie permis</th>
+                <td>{{ suivi_dossier.copiePermis ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Releve_integral</th>
-                <td>{{ suivi_dossier.releveIntegral ? 'Yes' : 'No' }}</td>
+                <th>Releve integral</th>
+                <td>{{ suivi_dossier.releveIntegral ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Decision_judiciaire</th>
-                <td>{{ suivi_dossier.decisionJudiciaire ? 'Yes' : 'No' }}</td>
+                <th>Decision judiciaire</th>
+                <td>{{ suivi_dossier.decisionJudiciaire ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Lettre_48n</th>
-                <td>{{ suivi_dossier.lettre48n ? 'Yes' : 'No' }}</td>
+                <th>Lettre 48n</th>
+                <td>{{ suivi_dossier.lettre48n ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
                 <th>Observations</th>
@@ -46,9 +42,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('suivi_dossier_index') }}">back to list</a>
+    <a href="{{ path('suivi_dossier_index') }}"><button>Retour</button></a>
 
-    <a href="{{ path('suivi_dossier_edit', {'id': suivi_dossier.id}) }}">edit</a>
+    <a href="{{ path('suivi_dossier_edit', {'id': suivi_dossier.id}) }}"><button>Modifier</button></a>
 
     {{ include('suivi_dossier/_delete_form.html.twig') }}
 {% endblock %}

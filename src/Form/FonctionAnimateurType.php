@@ -6,13 +6,17 @@ use App\Entity\FonctionAnimateur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 
 class FonctionAnimateurType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fonction_nom')
+            ->add('fonction_nom', TextType::class, array(
+                'label' => 'Fonction',
+            ))
         ;
     }
 

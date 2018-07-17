@@ -3,31 +3,32 @@
 {% block title %}Stagiaire index{% endblock %}
 
 {% block body %}
-    <h1>Stagiaires</h1>
+    <h1>Liste des stagiaires</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <!--<th>Id</th>-->
                 <th>Nom</th>
-                <th>Nom_naissance</th>
-                <th>Prenom</th>
-                <th>Date_naissance</th>
-                <th>Lieu_naissance</th>
+                <!--<th>Nom de naissance</th>-->
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <!--<th>Lieu de naissance</th>-->
                 <th>Adresse</th>
-                <th>Code_postal</th>
-                <th>Commune</th>
-                <th>Pays</th>
-                <th>Tel_portable</th>
-                <th>Tel_fixe</th>
+                <th>Code postal</th>
+                <!--<th>Commune</th>-->
+                <!--<th>Pays</th>-->
+                <th>Tél portable</th>
+                <th>Tel fixe</th>
                 <th>Email</th>
-                <th>Carte_avantages_jeunes</th>
-                <th>Partenaires</th>
-                <th>Adherents</th>
-                <th>actions</th>
+                <!--<th>Carte avantages jeunes</th>-->
+                <!--<th>Partenaires</th>-->
+                <!--<th>Adhérents</th>-->
+                <!--<th>actions</th>-->
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('stagiaire_new') }}"><button> + Nouveau</button></a>
         {% for stagiaire in stagiaires %}
             <tr>
                 <td>{{ stagiaire.id }}</td>
@@ -61,5 +62,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('stagiaire_new') }}">Nouveau</a>
+    <a href="{{ path('stagiaire_new') }}"> + Nouveau</a>
 {% endblock %}

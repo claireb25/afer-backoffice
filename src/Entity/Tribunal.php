@@ -58,6 +58,10 @@ class Tribunal
      */
     private $service_tribunal_id;
 
+    public function __toString() {
+        return $this->tribunal_nom;
+    }
+
     public function __construct()
     {
         $this->bordereaus = new ArrayCollection();

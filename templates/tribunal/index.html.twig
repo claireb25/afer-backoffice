@@ -1,37 +1,44 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
-{% block title %}Tribunal index{% endblock %}
+{% block title %}Liste des tribunaux{% endblock %}
 
 {% block body %}
 
-    <h1>Tribunaux</h1>
+    <h1>Liste des tribunaux</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Tribunal nom</th>
+                <th>Tribunal</th>
+                <th>Nature</th>
                 <th>Adresse</th>
                 <th>Code postal</th>
-                <th>Commune</th>
+                <th>Ville</th>
             </tr>
         </thead>
         <tbody>
-        <p>
-            <a href="{{ path('tribunal_new') }}">Nouveau tribunal</a>
-        </p>
+        
+           <a href="{{ path('tribunal_new') }}"> <button> Nouveau +</button></a>
+        
         {% for tribunal in tribunals %}
             <tr>
                 <td>{{ tribunal.tribunalNom }}</td>
+                <td>{{ tribunal.NatureTribunalId}}</td>
                 <td>{{ tribunal.adresse }}</td>
                 <td>{{ tribunal.codePostal }}</td>
                 <td>{{ tribunal.commune }}</td>
                 <td>
-                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}">Modifier</a>
+                <a href="{{ path('tribunal_show', {'id': tribunal.id}) }}">
+                    <button>Voir</button></a></td>
+                <td>
+                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}"><button>modifier</button></a>
+                    
                 </td>
                 <td>
                 {{ include('tribunal/_delete_form.html.twig') }}
                 </td>
             </tr>
+          
         {% else %}
             <tr>
                 <td colspan="6">Aucun tribinual enregistré</td>
@@ -39,5 +46,8 @@
         {% endfor %}
         </tbody>
     </table>
+    <p>
+        <a href="{{ path('tribunal_new') }}"><button> Nouveau +</button></a>
+    </p>
   
 {% endblock %}

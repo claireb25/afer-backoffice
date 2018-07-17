@@ -1,14 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SuiviDossier index{% endblock %}
+{% block title %}Suivi de dossiers{% endblock %}
 
 {% block body %}
-    <h1>SuiviDossier index</h1>
+    <h1>Liste des suivis de dossiers</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Paye</th>
                 <th>Reception_bulletin_inscription</th>
                 <th>Copie_cni</th>
@@ -17,25 +16,22 @@
                 <th>Decision_judiciaire</th>
                 <th>Lettre_48n</th>
                 <th>Observations</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for suivi_dossier in suivi_dossiers %}
             <tr>
-                <td>{{ suivi_dossier.id }}</td>
-                <td>{{ suivi_dossier.paye ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.receptionBulletinInscription ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.copieCni ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.copiePermis ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.releveIntegral ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.decisionJudiciaire ? 'Yes' : 'No' }}</td>
-                <td>{{ suivi_dossier.lettre48n ? 'Yes' : 'No' }}</td>
+                <td>{{ suivi_dossier.paye ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.receptionBulletinInscription ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.copieCni ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.copiePermis ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.releveIntegral ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.decisionJudiciaire ? 'Oui' : 'Non' }}</td>
+                <td>{{ suivi_dossier.lettre48n ? 'Oui' : 'Non' }}</td>
                 <td>{{ suivi_dossier.observations }}</td>
-                <td>
-                    <a href="{{ path('suivi_dossier_show', {'id': suivi_dossier.id}) }}">show</a>
-                    <a href="{{ path('suivi_dossier_edit', {'id': suivi_dossier.id}) }}">edit</a>
-                </td>
+                <td><a href="{{ path('suivi_dossier_show', {'id': suivi_dossier.id}) }}"><button>Voir</button></a></td>
+                <td><a href="{{ path('suivi_dossier_edit', {'id': suivi_dossier.id}) }}"><button>Modifier</button></a></td>
+                <td>{{ include('suivi_dossier/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
@@ -45,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('suivi_dossier_new') }}">Nouveau</a>
+    <a href="{{ path('suivi_dossier_new') }}"><button>Nouveau</button></a>
 {% endblock %}
