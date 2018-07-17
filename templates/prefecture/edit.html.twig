@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modification Table Prefecture{% endblock %}
+{% block title %}Modification prefecture{% endblock %}
 
 {% block body %}
-    <h1>Modification Table Prefecture</h1>
+    <h1>Modification de la prefecture</h1>
 
-    {{ include('prefecture/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('prefecture_index') }}">Retour</a>
-
+    {{ include('prefecture/_form.html.twig', {'button_label': 'Envoyer'}) }}
+    <a href="{{ path('prefecture_index') }}"><button>Retour</button></a>
+    <a href="{{ path('prefecture_show', {'id': prefecture.id}) }}"><button>Voir</button></a>
     {{ include('prefecture/_delete_form.html.twig') }}
 {% endblock %}

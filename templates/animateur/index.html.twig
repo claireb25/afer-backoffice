@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Animateur index{% endblock %}
+{% block title %}Liste animateurs{% endblock %}
 
 {% block body %}
-    <h1>Animateur index</h1>
+    <h1>Liste des animateurs</h1>
 
     <table class="table">
         <thead>
@@ -12,14 +12,14 @@
                 <th>Prenom</th>
                 <th>Gta</th>
                 <th>Commune</th>
-                <th>Tel_portable</th>
-                <th>Tel_fixe</th>
+                <th>Téléphone portable</th>
+                <th>Télépone fixe</th>
                 <th>Email</th>
                 <th>Repas</th>
             </tr>
         </thead>
         <tbody>
-        <p><a href="{{ path('animateur_new') }}">Créer un nouveau animateur</a></p>
+        <a href="{{ path('animateur_new') }}"><button>Nouveau</button></a>
         {% for animateur in animateurs %}
             <tr>
                 <td>{{ animateur.nom }}</td>
@@ -30,10 +30,8 @@
                 <td>{{ animateur.telFixe }}</td>
                 <td>{{ animateur.email }}</td>
                 <td>{{ animateur.repas ? 'Oui' : 'Non' }}</td>
-                <td>
-                    <a href="{{ path('animateur_show', {'id': animateur.id}) }}">Voir</a>
-                    <a href="{{ path('animateur_edit', {'id': animateur.id}) }}">Modifier</a>
-                </td>
+                <td><a href="{{ path('animateur_show', {'id': animateur.id}) }}"><button>Voir</button></a></td>
+                <td><a href="{{ path('animateur_edit', {'id': animateur.id}) }}"><button>Modifier</button></a></td>
                 <td>{{ include('animateur/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
@@ -43,6 +41,7 @@
         {% endfor %}
         </tbody>
     </table>
+    
+    <a href="{{ path('animateur_new') }}"><button>Nouveau</button></a>
 
-    <p><a href="{{ path('animateur_new') }}">Créer un nouveau animateur</a></p>
 {% endblock %}
