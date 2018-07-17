@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Suivi de dossiers{% endblock %}
+{% block title %}Suivi dossiers{% endblock %}
 
 {% block body %}
     <h1>Liste des suivis de dossiers</h1>
@@ -9,16 +9,17 @@
         <thead>
             <tr>
                 <th>Paye</th>
-                <th>Reception_bulletin_inscription</th>
-                <th>Copie_cni</th>
-                <th>Copie_permis</th>
-                <th>Releve_integral</th>
-                <th>Decision_judiciaire</th>
-                <th>Lettre_48n</th>
+                <th>Reception du bulletin inscription</th>
+                <th>Copie cni</th>
+                <th>Copie permis</th>
+                <th>Releve integral</th>
+                <th>Decision judiciaire</th>
+                <th>Lettre 48n</th>
                 <th>Observations</th>
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('suivi_dossier_new') }}"><button> + nouveau</button></a>
         {% for suivi_dossier in suivi_dossiers %}
             <tr>
                 <td>{{ suivi_dossier.paye ? 'Oui' : 'Non' }}</td>
@@ -35,11 +36,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun suivis de dossier enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('suivi_dossier_new') }}"><button>Nouveau</button></a>
+    <a href="{{ path('suivi_dossier_new') }}"><button> + nouveau</button></a>
 {% endblock %}

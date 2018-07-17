@@ -1,26 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NaturePrefecture{% endblock %}
+{% block title %}Nature préfecture{% endblock %}
 
 {% block body %}
-    <h1>NaturePrefecture</h1>
+    <h1>Nature de la préfecture</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ nature_prefecture.id }}</td>
-            </tr>
-            <tr>
-                <th>Nature_nom</th>
+                <th>Nom</th>
                 <td>{{ nature_prefecture.natureNom }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('nature_prefecture_index') }}">back to list</a>
+    <a href="{{ path('nature_prefecture_index') }}"><button>Retour</button></a>
 
-    <a href="{{ path('nature_prefecture_edit', {'id': nature_prefecture.id}) }}">edit</a>
+    <a href="{{ path('nature_prefecture_edit', {'id': nature_prefecture.id}) }}"><button>Modifier</button></a>
 
     {{ include('nature_prefecture/_delete_form.html.twig') }}
 {% endblock %}

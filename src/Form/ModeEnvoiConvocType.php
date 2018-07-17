@@ -14,7 +14,7 @@ class ModeEnvoiConvocType extends AbstractType
         $builder
             ->add('courrier')
             ->add('email')
-            ->add('suiviDossiers')
+            //->add('suiviDossiers')
         ;
     }
 

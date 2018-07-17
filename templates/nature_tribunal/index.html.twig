@@ -1,35 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NatureTribunal index{% endblock %}
+{% block title %}Liste nature tribunal{% endblock %}
 
 {% block body %}
-    <h1>NatureTribunal index</h1>
+    <h1>Listes des natures de tribunaux</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nature_nom</th>
-                <th>actions</th>
+                <th>Nom</th>
             </tr>
         </thead>
         <tbody>
+        <a href="{{ path('nature_tribunal_new') }}"><button> + nouveau</button></a>
         {% for nature_tribunal in nature_tribunals %}
             <tr>
-                <td>{{ nature_tribunal.id }}</td>
                 <td>{{ nature_tribunal.natureNom }}</td>
                 <td>
-                    <a href="{{ path('nature_tribunal_show', {'id': nature_tribunal.id}) }}">show</a>
-                    <a href="{{ path('nature_tribunal_edit', {'id': nature_tribunal.id}) }}">edit</a>
+                    <a href="{{ path('nature_tribunal_show', {'id': nature_tribunal.id}) }}"><button>Voir</button></a>
+                    <a href="{{ path('nature_tribunal_edit', {'id': nature_tribunal.id}) }}"><button>Modifier</button></a>
                 </td>
+                <td>{{ include('nature_tribunal/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune nature de tribunal enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('nature_tribunal_new') }}">Create new</a>
+    <a href="{{ path('nature_tribunal_new') }}"><button> + nouveau</button></a>
 {% endblock %}

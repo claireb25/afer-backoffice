@@ -28,6 +28,11 @@ class TypeInfraction
      */
     private $date_infraction;
 
+
+    public function __toString() {
+        return $this->type_infraction;
+    }
+
     public function __construct()
     {
         $this->date_infraction = new ArrayCollection();
