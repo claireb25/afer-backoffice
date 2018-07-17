@@ -7,7 +7,9 @@
 
     {{ include('type_infraction/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('type_infraction_index') }}">Retour</a>
+    <a href="{{ path('type_infraction_index') }}">
+        <button class="btn">Retour</button>
+    </a>
 
     {{ include('type_infraction/_delete_form.html.twig') }}
 {% endblock %}
