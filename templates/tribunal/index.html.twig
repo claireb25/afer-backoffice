@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         
-           <a href="{{ path('tribunal_new') }}"> <button> Nouveau +</button></a>
+           <a href="{{ path('tribunal_new') }}"> <button> Nouveau</button></a>
         
         {% for tribunal in tribunals %}
             <tr>
@@ -31,7 +31,7 @@
                 <a href="{{ path('tribunal_show', {'id': tribunal.id}) }}">
                     <button>Voir</button></a></td>
                 <td>
-                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}"><button>modifier</button></a>
+                    <a href="{{ path('tribunal_edit', {'id': tribunal.id}) }}"><button>Modifier</button></a>
                     
                 </td>
                 <td>
@@ -47,7 +47,7 @@
         </tbody>
     </table>
     <p>
-        <a href="{{ path('tribunal_new') }}"><button> Nouveau +</button></a>
+        <a href="{{ path('tribunal_new') }}"><button> Nouveau</button></a>
     </p>
   
 {% endblock %}

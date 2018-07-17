@@ -3,11 +3,12 @@
 {% block title %}Modifier Forfait Animateur{% endblock %}
 
 {% block body %}
-    <h1>Modifier Forfait Animateur</h1>
 
-    {{ include('forfait_animateur/_form.html.twig', {'button_label': 'Update'}) }}
+    <h1>Modifier le forfait : {{ forfait_animateur.forfaitPrix }} €</h1>
 
-    <a href="{{ path('forfait_animateur_index') }}">Retour</a>
+    {{ include('forfait_animateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('forfait_animateur/_delete_form.html.twig') }}
+    <a href="{{ path('forfait_animateur_index') }}"><button>Retour</button></a>
+
+
 {% endblock %}
