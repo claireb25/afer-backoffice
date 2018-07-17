@@ -31,21 +31,27 @@ class StagiaireType extends AbstractType
             ->add('date_naissance', DateType::class,
             array(  'label' => 'Date de naissance',
                     'widget' => 'choice',
-                    'years' => range(date('Y'), date('Y')-100)
+                    'years' => range(date('Y'), date('Y')-100),
+                    'format' => 'dd-MMMM-yyyy'
+                    
             ,))
             ->add('lieu_naissance', TextType::class,
             array ( 'label' => 'Ville de naissance'
             ,))
             ->add('adresse')
             ->add('code_postal')
-            ->add('commune')
+            ->add('commune', TextType::class,
+            array ( 'label' => 'Ville'
+            ,))
             ->add('pays')
             ->add('tel_portable')
             ->add('tel_fixe')
             ->add('email')
             ->add('carte_avantages_jeunes')
             ->add('partenaires')
-            ->add('adherents')
+            ->add('adherents', TextType::class,
+            array ( 'label' => 'Adhérents'
+            ,))
             ->add('permis')
             ->add('liaisonStagiaireStageDossierCasBordereau')
         ;

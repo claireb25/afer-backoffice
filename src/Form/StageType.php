@@ -19,7 +19,7 @@ class StageType extends AbstractType
     {
         $builder
             ->add('stage_numero', TextType::class, array(
-                'label'=> 'Numéro de satge',
+                'label'=> 'Numéro de stage',
             ))
             ->add('date')
             ->add('stage_hpo')
