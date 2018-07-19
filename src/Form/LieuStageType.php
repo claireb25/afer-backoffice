@@ -28,7 +28,8 @@ class LieuStageType extends AbstractType
             ->add('tel')
             ->add('latitude')
             ->add('longitude')
-            ->add('divers')
+            ->add('divers', TextType::class,
+            array('label'=>'Observation'))
         ;
     }
 

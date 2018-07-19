@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class StagiaireType extends AbstractType
 {
@@ -43,15 +44,16 @@ class StagiaireType extends AbstractType
             ->add('commune', TextType::class,
             array ( 'label' => 'Ville'
             ,))
-            ->add('pays')
+            ->add('pays') // deux possibilités : 1/créer un entitype est connecter à une nouvelle table pays via un namespace 2/ utiliser une api qui gère ville pays données gps
             ->add('tel_portable')
             ->add('tel_fixe')
             ->add('email')
             ->add('carte_avantages_jeunes')
             ->add('partenaires')
-            ->add('adherents', TextType::class,
-            array ( 'label' => 'Adhérents'
-            ,))
+            ->add('adherents', CheckboxType::class,
+            array ( 'label' => 'Adhérents',
+             'required'=>false 
+            ))
             ->add('permis')
         ;
     }
