@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 
@@ -22,7 +23,12 @@ class StageType extends AbstractType
             ->add('stage_numero', TextType::class, array(
                 'label'=> 'Numéro de stage',
             ))
-            ->add('date')
+            ->add('date', DateType::class,
+            array(  'label' => 'Date',
+                    'widget' => 'choice',
+                    'format' => 'dd-MMMM-yyyy'
+                    
+            ,))
             ->add('stage_hpo', CheckboxType::class, array(
                 'label'=>'Stage hors programme officiel',
                 'required'=> false

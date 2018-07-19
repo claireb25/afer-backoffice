@@ -18,7 +18,7 @@
         {% for stage in stages %}
             <tr>
                 <td>{{ stage.stageNumero }}</td>
-                <td>{{ stage.date ? stage.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ stage.date ? stage.date|date('Y-m-d') }}</td>
                 <td>{{ stage.stageHpo ? 'Yes' : 'No' }}</td>
                 <td>
                     <a href="{{ path('stage_show', {'id': stage.id}) }}">
