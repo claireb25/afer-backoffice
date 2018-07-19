@@ -8,11 +8,7 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ stage.id }}</td>
-            </tr>
-            <tr>
-                <th>Stage_numero</th>
+                <th>Numéro de stage</th>
                 <td>{{ stage.stageNumero }}</td>
             </tr>
             <tr>
@@ -20,7 +16,7 @@
                 <td>{{ stage.date ? stage.date|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Stage_hpo</th>
+                <th>Hors programme officiel</th>
                 <td>{{ stage.stageHpo ? 'Yes' : 'No' }}</td>
             </tr>
         </tbody>
