@@ -25,13 +25,10 @@ class AnimateurType extends AbstractType
             ->add('email')
             ->add('urssaf')
             ->add('siret')
-            ->add('km_a_r')
-            ->add('repas')
             ->add('civilite_id')
             ->add('fonction_animateur_id')
             ->add('statut_id')
             ->add('forfait_animateur_id')
-            ->add('stage_id')
         ;
     }
 

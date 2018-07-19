@@ -53,7 +53,6 @@ class StagiaireType extends AbstractType
             array ( 'label' => 'Adhérents'
             ,))
             ->add('permis')
-            ->add('liaisonStagiaireStageDossierCasBordereau')
         ;
     }
 
