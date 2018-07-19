@@ -19,7 +19,7 @@ class LiaisonStagiaireStageDossierCasBordereau
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Stagiaire", mappedBy="liaisonStagiaireStageDossierCasBordereau")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Stagiaire", inversedBy="liaisonStagiaireStageDossierCasBordereaus")
      */
     private $stagiaire_id;
 
@@ -39,7 +39,7 @@ class LiaisonStagiaireStageDossierCasBordereau
     private $cas_stage_id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Bordereau", mappedBy="liaisonStagiaireStageDossierCasBordereau")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Bordereau", inversedBy="liaisonStagiaireStageDossierCasBordereaus")
      */
     private $bordereau_id;
 

@@ -36,6 +36,9 @@ class Permis
      */
     private $delivre_le;
 
+    public function __toString() { 
+        return $this->stagiaire_id. ' ' .$this->numero_permis; }
+
     public function getId()
     {
         return $this->id;

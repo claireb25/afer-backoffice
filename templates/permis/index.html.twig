@@ -3,26 +3,28 @@
 {% block title %}Permis index{% endblock %}
 
 {% block body %}
-    <h1>Permis index</h1>
+
+    <h1>Liste des permis</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Numero_permis</th>
-                <th>Delivre_le</th>
-                <th>actions</th>
+                <th>Stagiaire</th>
+                <th>Numéro de permis</th>
+                <th>Delivré le</th>
+          
             </tr>
         </thead>
+        <a href="{{ path('permis_new') }}"><button>Nouveau</button></a>
         <tbody>
         {% for permi in permis %}
             <tr>
-                <td>{{ permi.id }}</td>
+                <td>{{ permi.stagiaireId }}</td>
                 <td>{{ permi.numeroPermis }}</td>
-                <td>{{ permi.delivreLe ? permi.delivreLe|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ permi.delivreLe ? permi.delivreLe|date('d/m/Y') : '' }}</td>
                 <td>
-                    <a href="{{ path('permis_show', {'id': permi.id}) }}">Voir</a>
-                    <a href="{{ path('permis_edit', {'id': permi.id}) }}">Modifier</a>
+                    <a href="{{ path('permis_show', {'id': permi.id}) }}"><button>Voir</button></a>
+                    <a href="{{ path('permis_edit', {'id': permi.id}) }}"><button>Modifier</button></a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('permis_new') }}">Nouveau</a>
+    <a href="{{ path('permis_new') }}"><button>Nouveau</button></a>
 {% endblock %}
