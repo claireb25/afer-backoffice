@@ -48,6 +48,11 @@ class Stage
      */
     private $animateurStages;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $date_fin;
+
     public function __toString() {
         return $this->stage_numero;
     }
@@ -170,6 +175,18 @@ class Stage
                 $animateurStage->setStage(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->date_fin;
+    }
+
+    public function setDateFin(?\DateTimeInterface $date_fin): self
+    {
+        $this->date_fin = $date_fin;
 
         return $this;
     }
