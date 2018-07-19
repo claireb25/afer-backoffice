@@ -27,9 +27,9 @@ class Bordereau
     private $tribunal_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\LiaisonStagiaireStageDossierCasBordereau", inversedBy="bordereau_id")
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $liaisonStagiaireStageDossierCasBordereau;
+    private $stage_id;
 
     public function getId()
     {
@@ -60,15 +60,16 @@ class Bordereau
         return $this;
     }
 
-    public function getLiaisonStagiaireStageDossierCasBordereau(): ?LiaisonStagiaireStageDossierCasBordereau
+    public function getStageId(): ?int
     {
-        return $this->liaisonStagiaireStageDossierCasBordereau;
+        return $this->stage_id;
     }
 
-    public function setLiaisonStagiaireStageDossierCasBordereau(?LiaisonStagiaireStageDossierCasBordereau $liaisonStagiaireStageDossierCasBordereau): self
+    public function setStageId(?int $stage_id): self
     {
-        $this->liaisonStagiaireStageDossierCasBordereau = $liaisonStagiaireStageDossierCasBordereau;
+        $this->stage_id = $stage_id;
 
         return $this;
     }
+
 }

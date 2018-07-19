@@ -104,19 +104,10 @@ class Animateur
     private $forfait_animateur_id;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\AnimateurStage", mappedBy="animateur")
      */
-    private $km_a_r;
+    private $animateurStages;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $repas;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Stage", inversedBy="animateurs")
-     */
-    private $stage_id;
 
     public function __toString() {
         return (string) $this->nom;
@@ -125,6 +116,7 @@ class Animateur
     public function __construct()
     {
         $this->stage_id = new ArrayCollection();
+        $this->animateurStages = new ArrayCollection();
     }
 
     public function getId()
@@ -336,54 +328,36 @@ class Animateur
         return $this;
     }
 
-    public function getKmAR(): ?int
-    {
-        return $this->km_a_r;
-    }
-
-    public function setKmAR(?int $km_a_r): self
-    {
-        $this->km_a_r = $km_a_r;
-
-        return $this;
-    }
-
-    public function getRepas(): ?bool
-    {
-        return $this->repas;
-    }
-
-    public function setRepas(bool $repas): self
-    {
-        $this->repas = $repas;
-
-        return $this;
-    }
-
     /**
-     * @return Collection|Stage[]
+     * @return Collection|AnimateurStage[]
      */
-    public function getStageId(): Collection
+    public function getAnimateurStages(): Collection
     {
-        return $this->stage_id;
+        return $this->animateurStages;
     }
 
-    public function addStageId(Stage $stageId): self
+    public function addAnimateurStage(AnimateurStage $animateurStage): self
     {
-        if (!$this->stage_id->contains($stageId)) {
-            $this->stage_id[] = $stageId;
+        if (!$this->animateurStages->contains($animateurStage)) {
+            $this->animateurStages[] = $animateurStage;
+            $animateurStage->setAnimateur($this);
         }
 
         return $this;
     }
 
-    public function removeStageId(Stage $stageId): self
+    public function removeAnimateurStage(AnimateurStage $animateurStage): self
     {
-        if ($this->stage_id->contains($stageId)) {
-            $this->stage_id->removeElement($stageId);
+        if ($this->animateurStages->contains($animateurStage)) {
+            $this->animateurStages->removeElement($animateurStage);
+            // set the owning side to null (unless already changed)
+            if ($animateurStage->getAnimateur() === $this) {
+                $animateurStage->setAnimateur(null);
+            }
         }
 
         return $this;
     }
+
 
 }

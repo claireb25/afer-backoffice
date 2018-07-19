@@ -101,12 +101,6 @@ class Stagiaire
      */
     private $permis;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\LiaisonStagiaireStageDossierCasBordereau", inversedBy="stagiaire_id")
-     */
-
-    private $liaisonStagiaireStageDossierCasBordereau;
-
     public function __toString() {
       
         return $this->nom. ' ' .$this->prenom;
@@ -329,15 +323,4 @@ class Stagiaire
         return $this;
     }
 
-    public function getLiaisonStagiaireStageDossierCasBordereau(): ?LiaisonStagiaireStageDossierCasBordereau
-    {
-        return $this->liaisonStagiaireStageDossierCasBordereau;
-    }
-
-    public function setLiaisonStagiaireStageDossierCasBordereau(?LiaisonStagiaireStageDossierCasBordereau $liaisonStagiaireStageDossierCasBordereau): self
-    {
-        $this->liaisonStagiaireStageDossierCasBordereau = $liaisonStagiaireStageDossierCasBordereau;
-
-        return $this;
-    }
 }

@@ -44,9 +44,9 @@ class Stage
     private $liaisonStagiaireStageDossierCasBordereaus;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Animateur", mappedBy="stage_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\AnimateurStage", mappedBy="stage")
      */
-    private $animateurs;
+    private $animateurStages;
 
     public function __toString() {
         return $this->stage_numero;
@@ -56,6 +56,7 @@ class Stage
     {
         $this->liaisonStagiaireStageDossierCasBordereaus = new ArrayCollection();
         $this->animateurs = new ArrayCollection();
+        $this->animateurStages = new ArrayCollection();
     }
 
     public function getId()
@@ -143,30 +144,34 @@ class Stage
     }
 
     /**
-     * @return Collection|Animateur[]
+     * @return Collection|AnimateurStage[]
      */
-    public function getAnimateurs(): Collection
+    public function getAnimateurStages(): Collection
     {
-        return $this->animateurs;
+        return $this->animateurStages;
     }
 
-    public function addAnimateur(Animateur $animateur): self
+    public function addAnimateurStage(AnimateurStage $animateurStage): self
     {
-        if (!$this->animateurs->contains($animateur)) {
-            $this->animateurs[] = $animateur;
-            $animateur->addStageId($this);
+        if (!$this->animateurStages->contains($animateurStage)) {
+            $this->animateurStages[] = $animateurStage;
+            $animateurStage->setStage($this);
         }
 
         return $this;
     }
 
-    public function removeAnimateur(Animateur $animateur): self
+    public function removeAnimateurStage(AnimateurStage $animateurStage): self
     {
-        if ($this->animateurs->contains($animateur)) {
-            $this->animateurs->removeElement($animateur);
-            $animateur->removeStageId($this);
+        if ($this->animateurStages->contains($animateurStage)) {
+            $this->animateurStages->removeElement($animateurStage);
+            // set the owning side to null (unless already changed)
+            if ($animateurStage->getStage() === $this) {
+                $animateurStage->setStage(null);
+            }
         }
 
         return $this;
     }
+
 }
